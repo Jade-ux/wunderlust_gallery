@@ -1,17 +1,54 @@
 # Wunderlust Fine Art Gallery
 
-One or two paragraphs providing an overview of your project.
+## Index
 
-Essentially, this part is your sales pitch.
- 
+- <a href="#overview">Project Overview</a>
+- <a href="#ux">UX</a>
+- <a href="#userstories">User stories</a>
+- <a href="#wireframes">Wireframes</a>
+
+...
+
+<span id="overview"></span>
+
+## Overview
+
+Wunderlust is an online fine art gallery which exhibits and sells art from around the World. Our gallery showcases art from well-established and traditional artists as well as emerging artists breaking through the norms of the art world.
+
+Users may be looking for an artwork to remind them of a place they once visited,they may want to buy a piece from an artist they admire or could simply be looking for an item that will bring them joy. 
+
+As a user I want to be able to browse art by type/category, artist, style, style and price, in order to select items to purchase. I want to be able to see details about each artwork I am interested in and be able to add items to my shopping cart, customise my purchases and check out. 
+
+I want to be able to sign up for an account, manage my account and sign up for events.
+
+Artists will exhibit their art exclusively at Wunderlust for a number of months. As an artists I want to be able to 'consign work in' by uploading the image to the site, and 'consign work out' by removing the item after the exhibition/display term.
+
+I want to be able to edit items I have on the site and manage my own artist biography on the site.
+
+As a site owner I want to attract potential buyers to the website and allow them to easily browse through all the work available. I want to be able to sell artwork through the website and therefore receive a commission on any sales. I also want to encourage site users to sign up for an account so that I can easily market our artworks to them.
+
+<span id="ux"></span>
+
 ## UX
  
+[See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
+
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
 - As a user type, I want to perform an action, so that I can achieve a goal.
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+
+<span id="userstories"></span>
+
+## User Stories 
+
+
+|**Nr**|**As a/an**|**I want to be able to**|**So that I can**|
+|:-----|:-----|:-----|:-----|
+|1|Shopper|See what is on exhibition currently.|Decide if I want to attend, read up about the artist(s), find out about artwork.|
+
 
 ## Features
 
