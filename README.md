@@ -3,11 +3,10 @@
 ## Index
 
 - <a href="#overview">Project Overview</a>
-- <a href="#ux">UX</a>
-- <a href="#userstories">User stories</a>
-- <a href="#wireframes">Wireframes</a>
+- [User stories](static/wireframes_mockups/wunderlust-user-stories.pdf)
+- [Wireframes](static/wireframes_mockups/wunderlust-wireframes.pdf)
 
-...
+---
 
 <span id="overview"></span>
 
@@ -26,6 +25,22 @@ Artists will exhibit their art exclusively at Wunderlust for a number of months.
 I want to be able to edit items I have on the site and manage my own artist biography on the site.
 
 As a site owner I want to attract potential buyers to the website and allow them to easily browse through all the work available. I want to be able to sell artwork through the website and therefore receive a commission on any sales. I also want to encourage site users to sign up for an account so that I can easily market our artworks to them.
+
+---
+
+[See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
+
+[See my wireframes here](static/wireframes_mockups/wunderlust-wireframes.pdf)
+
+This is the end of my README currently. 
+
+---
+
+
+[See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
+
+
+
 
 <span id="ux"></span>
 
@@ -48,6 +63,12 @@ This section is also where you would share links to any wireframes, mockups, dia
 |**Nr**|**As a/an**|**I want to be able to**|**So that I can**|
 |:-----|:-----|:-----|:-----|
 |1|Shopper|See what is on exhibition currently.|Decide if I want to attend, read up about the artist(s), find out about artwork.|
+
+<span id="wireframes"></span>
+
+## Wireframes
+
+[See my user stories here](static/wireframes_mockups/wunderlust-wireframes.pdf)
 
 
 ## Features
