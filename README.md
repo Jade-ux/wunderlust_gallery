@@ -16,15 +16,17 @@ Wunderlust is an online fine art gallery which exhibits and sells art from aroun
 
 Users may be looking for an artwork to remind them of a place they once visited,they may want to buy a piece from an artist they admire or could simply be looking for an item that will bring them joy. 
 
-As a user I want to be able to browse art by type/category, artist, style, style and price, in order to select items to purchase. I want to be able to see details about each artwork I am interested in and be able to add items to my shopping cart, customise my purchases and check out. 
+As a user I want to be able to browse art by artist, category, country and price, in order to select items to purchase. I want to be able to see details about each artwork I am interested in and be able to add items to my shopping cart, customise my purchases and check out. 
 
 I want to be able to sign up for an account, manage my account and sign up for events.
 
 Artists will exhibit their art exclusively at Wunderlust for a number of months. As an artists I want to be able to 'consign work in' by uploading the image to the site, and 'consign work out' by removing the item after the exhibition/display term.
 
-I want to be able to edit items I have on the site and manage my own artist biography on the site.
+As an artist I want to be able to edit items I have on the site and manage my own artist biography on the site.
 
 As a site owner I want to attract potential buyers to the website and allow them to easily browse through all the work available. I want to be able to sell artwork through the website and therefore receive a commission on any sales. I also want to encourage site users to sign up for an account so that I can easily market our artworks to them.
+
+I want to allow artists to sign up for accounts so that they can manage their artwork and information, but I want to be able to approve the changes they make.
 
 ---
 
