@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Dosis&family=IBM+Plex+Sans:wght@300;400&display=swap')');
+
+/*-------------------------------------------------General*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*Stops website scrolling left and right on mobile:*/
+html,
+body {
+    overflow-x: hidden; 
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.footer {
+    background-color: #333333;
+    padding-top: 40px;
+    height: 50px;
+}
+
+/*-------------------------------------------------Headings*/
+
+.logo-first {
+    position: relative;
+    font-family: 'Bad Script', cursive;
+}
+
+.logo-second {
+    position: relative;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.75rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+/* Featured collection block for home page*/
+.block-featured {
+
+}
+
+.btn-featured {
+    background-color: #B90039
+    color: white;
+}
+
+.btn-search {
+    
+}
