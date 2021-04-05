@@ -5,7 +5,7 @@
 - <a href="#overview">Project Overview</a>
 - [User stories](static/wireframes_mockups/wunderlust-user-stories.pdf)
 - [Wireframes](static/wireframes_mockups/wunderlust-wireframes.pdf)
-
+...
 ---
 
 <span id="overview"></span>
@@ -96,6 +96,7 @@ In this section, you should mention all of the languages, frameworks, libraries,
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Pip3](https://pypi.org/project/pip/) - used to install Python packages
 - [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used to provide all account functionality including the ability to register for an account, verify, log in and out and reset a forgotten password.
+- [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - used to speed up responsive design
 
 
 ## Testing
