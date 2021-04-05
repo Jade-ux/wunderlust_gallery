@@ -39,6 +39,7 @@ body {
 
 .fixed-top {
     background-color: #B90039;
+    padding-top: 15px;
 }
 
 .list-nav i,
@@ -52,18 +53,23 @@ body {
 
 /*-------------------------------------------------Headings*/
 
+.row-logo {
+    margin-left: 40px;
+}
+
 .logo-first {
     position: relative;
     font-family: 'Bad Script', cursive;
     font-size: 2.75rem;
     color:white;
+    text-align: right;
 }
 
 .logo-second {
     position: relative;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    font-size: 2.5rem;
+    font-weight: 300;
+    font-size: 2rem;
     color: white;
 }
 
@@ -79,7 +85,7 @@ h2 {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
-    background: url('/media/Vincent_van_Gogh_381.jpg') no-repeat center center fixed;
+    background: url('/media/home-img.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -98,6 +104,20 @@ h2 {
     color: white;
 }
 
-.btn-search {
+/*-------------------------------------------------Mediq queries*/
 
+/*From Boutique Ado project*/
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
