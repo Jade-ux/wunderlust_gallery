@@ -52,8 +52,8 @@
             <div class="col-4 col-lg-6 my-auto py-2 py-lg-1">
                 <a href="{% url 'home' %}">
                     <div class="row-logo">
-                    <div class="logo-first text-center text-lg-left col-12 col-md-4">Wunderlust</div>
-                    <div class="logo-second text-center text-lg-left col-12 col-md-6">Fine Art Prints</div>
+                        <span class="logo-first">Wunderlust</span>
+                        <span class="logo-second">Fine Art Prints</span>
                     </div>
                 </a>
             </div>
@@ -95,14 +95,15 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                            href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                    ${{ grand_total|floatformat:2 }}
                                     {% else %}
-                                        $0.00
+                                    $0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -111,13 +112,31 @@
                 </ul>
             </div>
         </div>
+        <div class="row row-nav">
+            <nav class="navbar navbar-dark navbar-expand-lg w-100">
+                <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
+        </div>
     </header>
-
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
+        {% block featured %}
+            <div class="container-fluid featured-collection-banner">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h4 class="my-1">Featured collection: Post-impressionists</h4>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
     {% endblock %}
 
     {% block content %}
@@ -125,17 +144,17 @@
 
     {% block postloadjs %}
     {% endblock %}
-<footer>
-    <div class="col-3">
-        <h4>We accept</h4>
-    </div>
-    <div class="col-1">
-        <h4><i class="fas fa-cc-apple-pay fa-lg"></i></h4>
-    </div>
+    <footer>
+        <div class="col-3">
+            <h4>We accept</h4>
+        </div>
         <div class="col-1">
-        <h4><i class="fas fa-amex fa-lg"></i></h4>
-    </div>
-</footer>
+            <h4><i class="fas fa-cc-apple-pay fa-lg"></i></h4>
+        </div>
+        <div class="col-1">
+            <h4><i class="fas fa-amex fa-lg"></i></h4>
+        </div>
+    </footer>
 </body>
 
 </html>

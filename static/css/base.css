@@ -26,6 +26,7 @@ body {
     font-weight: 300;
     font-size: 1rem;
     color: #333333;
+    /*height: calc(100vh - 138px)*/
 }
 
 .footer {
@@ -42,12 +43,20 @@ body {
     padding-top: 15px;
 }
 
+.row-nav {
+    background-color: #B90039;
+}
+
 .list-nav i,
 .list-nav p {
     color: white;
 }
 
 .fa-search {
+    color: white;
+}
+
+#main-nav a {
     color: white;
 }
 
@@ -71,12 +80,14 @@ body {
     font-weight: 300;
     font-size: 2rem;
     color: white;
+    padding-left: 10px;
 }
 
 h2 {
     font-size: 1.9rem;
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
+    color: white;
 }
 
 /*-------------------------------------------------Home page banner*/
@@ -85,26 +96,53 @@ h2 {
     width: 100%;
     padding-left: 0px;
     padding-right: 0px;
-    background: url('/media/home-img.jpg') no-repeat center center fixed;
+    background: url('/media/home-img.jpg') no-repeat top right fixed;
     background-size: cover;
+    height: 450px;
+    position: relative;
 }
 
-.container-banner img {
-  width: 100%;
+@media (min-width: 992px) {
+    .container-banner {
+        height: calc(100vh - 138px);
+        position: relative;
+    }
+    
+    .block-featured {
+        background-color: rgba(25, 24, 24, 0.81);
+        height: 60%;
+        position: absolute;
+    }
 }
-
 
 /* Featured collection block for home page*/
 .block-featured {
-
+    height: 60%;
+    bottom: 0px;
+    position: absolute;
+    padding-left: 90px;
+    padding-top: 40px;
 }
 
 .btn-featured {
-    background-color: #B90039
+    background-color: #B90039;
     color: white;
+    margin-left: 40px;
 }
 
-/*-------------------------------------------------Mediq queries*/
+/*-------------------------------------------------Media queries*/
+
+.featured-collection-banner {
+    position: absolute;
+    top: 115px;
+    z-index: 1;
+    background-color: #333333;
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+
+/*-------------------------------------------------Media queries*/
 
 /*From Boutique Ado project*/
 /* fixed top navbar only on medium and up */
@@ -118,6 +156,6 @@ h2 {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 138px;
     }
 }
