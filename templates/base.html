@@ -47,9 +47,10 @@
 </head>
 
 <body>
+    <!--Logo-->
     <header class="container-fluid fixed-top">
         <div class="row">
-            <div class="col-4 col-lg-6 my-auto py-2 py-lg-1">
+            <div class="col-12 my-auto py-2 py-lg-1">
                 <a href="{% url 'home' %}">
                     <div class="row-logo">
                         <span class="logo-first">Wunderlust</span>
@@ -57,70 +58,73 @@
                     </div>
                 </a>
             </div>
-            <div class="col-2 col-lg-2 my-auto py-2 py-lg-1">
-                <form method="GET" action="">
-                    <div class="input-group w-80">
-                        <input class="form-control border border-grey" type="text" name="q" placeholder="Search">
-                        <div class="input-group-append">
-                            <button class="icon form-control btn btn-search" type="submit">
-                                <span>
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-4 col-lg-4 my-auto py-2 py-lg-1">
-                <ul class="list-inline list-unstyled text-right list-nav">
-                    <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Artworks Management</a>
-                            {% endif %}
-                            <a href="" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                            href="">
-                            <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    $0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
-        <div class="row row-nav">
-            <nav class="navbar navbar-dark navbar-expand-lg w-100">
-                <button class="navbar-toggler" type="button"
-                data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                {% include 'includes/mobile-top-header.html' %}
-                {% include 'includes/main-nav.html' %}
-            </nav>
+        <!--Nav bar-->
+        <div id="nav-top" class="container-fluid pt-lg-2">
+            <div class="row row-nav align-items-start">
+                <div class="d-none d-lg-flex col-2 mt-2 py-2 py-lg-1 order-2">
+                    <form method="GET" action="">
+                        <div class="input-group w-80">
+                            <input class="form-control border border-grey" type="text" name="q" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="icon form-control btn btn-search" type="submit">
+                                    <span>
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3 d-none d-lg-flex my-auto py-2 py-lg-1 order-3">
+                    <ul class="list-inline list-unstyled text-right list-nav">
+                        <li class="list-inline-item dropdown">
+                            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p class="my-0">Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item">Artworks Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                href="">
+                                <div class="text-center">
+                                    <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                    <p class="my-0">
+                                        {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        $0.00
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="navbar navbar-dark navbar-expand-lg col-12 col-md-7">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                        aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    {% include 'includes/mobile-top-header.html' %}
+                    {% include 'includes/main-nav.html' %}
+                </nav>
+            </div>
         </div>
     </header>
     {% if messages %}
@@ -128,15 +132,15 @@
     {% endif %}
 
     {% block page_header %}
-        {% block featured %}
-            <div class="container-fluid featured-collection-banner">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <h4 class="my-1">Featured collection: Post-impressionists</h4>
-                    </div>
-                </div>
+    {% block featured %}
+    <div class="container-fluid featured-collection-banner">
+        <div class="row text-center">
+            <div class="col-12">
+                <h4 class="my-1">Featured collection: Post-impressionists</h4>
             </div>
-        {% endblock %}
+        </div>
+    </div>
+    {% endblock %}
     {% endblock %}
 
     {% block content %}

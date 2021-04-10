@@ -52,12 +52,26 @@ body {
     color: white;
 }
 
+@media (max-width: 992px) {
+    .list-nav p {
+        font-size: 0.8rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem;
+    }
+}
+
 .fa-search {
     color: white;
 }
 
 #main-nav a {
     color: white;
+}
+
+#main-nav {
+    padding-left: 0px;
 }
 
 /*-------------------------------------------------Headings*/
@@ -81,6 +95,20 @@ body {
     font-size: 2rem;
     color: white;
     padding-left: 10px;
+}
+
+@media (max-width: 992px) {
+    .logo-second {
+        font-size: 1.5rem;
+    }
+
+    .logo-first {
+        font-size: 2rem;
+    }
+
+    .row-logo {
+        margin-left: 0px;
+    }
 }
 
 h2 {
