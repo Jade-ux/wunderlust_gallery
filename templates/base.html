@@ -65,7 +65,7 @@
                 <div class="d-none d-lg-flex col-2 mt-2 py-2 py-lg-1 order-2">
                     <form method="GET" action="">
                         <div class="input-group w-80">
-                            <input class="form-control border border-grey" type="text" name="q" placeholder="Search">
+                            <input id="search-input" class="form-control border border-grey" type="text" name="q" placeholder="Search">
                             <div class="input-group-append">
                                 <button class="icon form-control btn btn-search" type="submit">
                                     <span>
@@ -132,15 +132,16 @@
     {% endif %}
 
     {% block page_header %}
+    {% endblock %}
+
     {% block featured %}
-    <div class="container-fluid featured-collection-banner">
-        <div class="row text-center">
-            <div class="col-12">
-                <h4 class="my-1">Featured collection: Post-impressionists</h4>
+        <div class="container-fluid featured-collection-banner">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h4 class="my-1">Featured collection: Post-impressionists</h4>
+                </div>
             </div>
         </div>
-    </div>
-    {% endblock %}
     {% endblock %}
 
     {% block content %}

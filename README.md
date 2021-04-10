@@ -135,10 +135,27 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Content
 - The Boutique Ado project provided me with a lot of inspiration for this project. I used many of the lessons from that project to help me when planning out and building my own project and then added to it to make this site unique and fit for it's purpose.
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+Text for descriptions of artworks
+- Andy Warhol: [The Tate Modern's website](https://www.tate.org.uk/art/artworks/warhol-muhammad-ali-by-andy-warhol-ar00394#:~:text=Warhol%20photographed%20the%20boxer%2C%20Muhammad,of%20his%20'Athletes'%20series.&text=In%20the%20screenprint%20reproduced%20here,concentration%20required%20during%20a%20fight.) and [Princeton University Art Museum](https://artmuseum.princeton.edu/collections/objects/)
+- Gustav Klimt: [Google Arts](https://artsandculture.google.com/asset/nine-cartoons-for-the-execution-of-a-frieze-for-the-dining-room-of-stoclet-house-in-brussels-part-8-fulfillment-lovers-gustav-klimt/sQFM1ks6C1Lujg?hl=en)
+- Leonardo da Vinci: [Wikipedia - The Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man) and [Wikipedia - The Last Supper](https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo))
+- Paul Cezanne [Wikipedia - Paul Cezanne](https://en.wikipedia.org/wiki/Paul_C%C3%A9zanne) 
+- Wassily Kandinsky [Wassily Kandinsky](https://www.wassilykandinsky.net/work-50.php) 
+
 
 ### Media
-- The photos used in this site were obtained from ...
+
+- All artwork images are from [the Kaggle collection here](https://www.kaggle.com/ikarus777/best-artworks-of-all-time?select=artists.csv)
+
+Artist self-portraits:
+
+- Andy Warhol's self-portrait is from [the Kaggle collection here](https://www.kaggle.com/ikarus777/best-artworks-of-all-time?select=artists.csv)
+- Caravaggio's self portrait is from [the Kaggle collection here](https://www.kaggle.com/ikarus777/best-artworks-of-all-time?select=artists.csv)
+- Paul Cezanne's portrait is from [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Paul_C%C3%A9zanne_-_Self-Portrait_-_Google_Art_Project.jpg)
+- Vincent van Gogh's portrait is from [Wikimedia commons](https://commons.wikimedia.org/wiki/Self-portrait_paintings_by_Vincent_van_Gogh)
+- Wassily Kandinsky's portrait is from [Wikimedia commons](https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FWassily_Kandinsky&psig=AOvVaw3NiSxIgWiShBiDnKNn57iR&ust=1618174605016000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJii9qXI9O8CFQAAAAAdAAAAABAG)
+- Gustav Klimt's portrait is from Wassily Kandinsky's portrait is from [Wikimedia commons](https://)
+- Leonardo da Vinci's self-portrait is from [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg)
 
 ### Acknowledgements
 

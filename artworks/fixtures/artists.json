@@ -1,0 +1,86 @@
+[
+   {
+      "pk":1,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"andy_warhol",
+         "friendly_name":"Andy Warhol",
+         "category":5,
+         "country":1,
+         "biography":"bio",
+         "image":"Andy_Warhol_90.jpg"
+      }
+   },
+   {
+      "pk":2,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"caravaggio",
+         "friendly_name":"Caravaggio",
+         "category":3,
+         "country":5,
+         "biography":"bio",
+         "image":"Caravaggio_23.jpg"
+      }
+   },
+   {
+      "pk":3,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"gustav_klimt",
+         "friendly_name":"Gustav Klimt",
+         "category":1,
+         "country":2,
+         "biography":"bio",
+         "image":"Klimt.jpg"
+      }
+   },
+   {
+      "pk":4,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"leonardo_da_vinci",
+         "friendly_name":"Leonardo da Vinci",
+         "category":4,
+         "country":5,
+         "biography":"bio",
+         "image":"Leonardo_self.jpg"
+      }
+   },
+   {
+      "pk":5,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"paul_cezanne",
+         "friendly_name":"Paul Cezanne",
+         "category":6,
+         "country":4,
+         "biography":"bio",
+         "image":"Paul_Cezanne.jpg"
+      }
+   },
+   {
+      "pk":6,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"wassily_kandinsky",
+         "friendly_name":"Wassily Kandinsky",
+         "category":3,
+         "country":6,
+         "biography":"bio",
+         "image":"wassily_kandinsky.jpg"
+      }
+   },
+   {
+      "pk":7,
+      "model":"artworks.artist",
+      "fields":{
+         "name":"vincent_van_gogh",
+         "friendly_name":"Vincent van Gogh",
+         "category":6,
+         "country":3,
+         "biography":"bio",
+         "image":"van_gogh.jpg"
+      }
+   }
+]

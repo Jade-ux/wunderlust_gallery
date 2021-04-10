@@ -1,0 +1,50 @@
+[
+   {
+      "pk":1,
+      "model":"artworks.category",
+      "fields":{
+         "name":"art_nouveau",
+         "friendly_name":"Art Nouveau"
+      }
+   },
+   {
+      "pk":2,
+      "model":"artworks.category",
+      "fields":{
+         "name":"baroque",
+         "friendly_name":"Baroque"
+      }
+   },
+   {
+      "pk":3,
+      "model":"artworks.category",
+      "fields":{
+         "name":"expressionism",
+         "friendly_name":"Expressionism"
+      }
+   },
+   {
+      "pk":4,
+      "model":"artworks.category",
+      "fields":{
+         "name":"high_renaissance",
+         "friendly_name":"High Renaissance"
+      }
+   },
+   {
+      "pk":5,
+      "model":"artworks.category",
+      "fields":{
+         "name":"pop_art",
+         "friendly_name":"Pop Art"
+      }
+   },
+   {
+      "pk":6,
+      "model":"artworks.category",
+      "fields":{
+         "name":"post_impressionism",
+         "friendly_name":"Post-Impressionism"
+      }
+   }
+]

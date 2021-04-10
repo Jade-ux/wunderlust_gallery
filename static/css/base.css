@@ -52,6 +52,11 @@ body {
     color: white;
 }
 
+.nav-link {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+}
+
 @media (max-width: 992px) {
     .list-nav p {
         font-size: 0.8rem;
@@ -72,6 +77,25 @@ body {
 
 #main-nav {
     padding-left: 0px;
+}
+
+.dropdown-menu {
+    background-color: #B90039;
+    border-radius: 0;
+}
+
+.dropdown-item:focus, 
+.dropdown-item:hover {
+    background-color: #dc3545;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+/*Search bar input field*/
+#search-input {
+    border-radius: 0;
 }
 
 /*-------------------------------------------------Headings*/
@@ -162,7 +186,7 @@ h2 {
 
 .featured-collection-banner {
     position: absolute;
-    top: 115px;
+    top: 188px;
     z-index: 1;
     background-color: #333333;
     width: 100%;

@@ -1,0 +1,784 @@
+[
+   {
+      "pk":1,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_44.jpg",
+         "name":"river",
+         "friendly_name":"River",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":2,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_59.jpg",
+         "name":"countryside",
+         "friendly_name":"Countryside",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":3,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_65.jpg",
+         "name":"autumn_harvest",
+         "friendly_name":"Autumn Harvest",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":4,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_74.jpg",
+         "name":"harvest",
+         "friendly_name":"Harvest",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":5,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_88.jpg",
+         "name":"wheat_field_with_clouds",
+         "friendly_name":"Wheat Field With Clouds",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":14.95,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":6,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_99.jpg",
+         "name":"three_sunflowers",
+         "friendly_name":"Three Sunflowers",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.95,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":7,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_105.jpg",
+         "name":"apples",
+         "friendly_name":"Apples",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":13.95,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":8,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_109.jpg",
+         "name":"wheat_field_with_cypresses",
+         "friendly_name":"What Field With  Cypresses",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":14.95,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":9,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_179.jpg",
+         "name":"Self-portrait",
+         "friendly_name":"Self Portrait",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":10,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_282.jpg",
+         "name":"chair",
+         "friendly_name":"Chair",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":11,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_359.jpg",
+         "name":"poppies",
+         "friendly_name":"Poppies",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":12,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_368.jpg",
+         "name":"the_starry_night",
+         "friendly_name":"The Starry Night ",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":13,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_381.jpg",
+         "name":"wheat_fields",
+         "friendly_name":"Wheat Fields",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":14,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_492.jpg",
+         "name":"sunset",
+         "friendly_name":"Sunset",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":15,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vincent_van_Gogh_735.jpg",
+         "name":"the_days_catch",
+         "friendly_name":"The Day�s Catch",
+         "description":"Description",
+         "artist":7,
+         "category":6,
+         "original_medium":"Oil",
+         "country":3,
+         "price":15.99,
+         "size":"60 x 50 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":16,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_2.jpg",
+         "name":"cambells_soup",
+         "friendly_name":"Campbell�s Soup",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. Warhol began producing his iconic portraits of Marilyn Monroe shortly after the troubled actress committed suicide in August 1962. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":13.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":17,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_24.jpg",
+         "name":"frog",
+         "friendly_name":"Frog",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. Warhol began producing his iconic portraits of Marilyn Monroe shortly after the troubled actress committed suicide in August 1962. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":14.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":18,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_26.jpg",
+         "name":"marilyn_1",
+         "friendly_name":"Marylin 1",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. Warhol began producing his iconic portraits of Marilyn Monroe shortly after the troubled actress committed suicide in August 1962. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":15.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":19,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_52.jpg",
+         "name":"liz",
+         "friendly_name":"Liz",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. Warhol began producing his iconic portraits of Marilyn Monroe shortly after the troubled actress committed suicide in August 1962. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":13.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":20,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_66.jpg",
+         "name":"aarilyn_2",
+         "friendly_name":"Marilyn 2",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. Warhol began producing his iconic portraits of Marilyn Monroe shortly after the troubled actress committed suicide in August 1962. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":14.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":21,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_73.jpg",
+         "name":"mickey_mouse",
+         "friendly_name":"Mickey Mouse",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. Warhol began producing his iconic portraits of Marilyn Monroe shortly after the troubled actress committed suicide in August 1962. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":15.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":22,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_90.jpg",
+         "name":"self_portrait",
+         "friendly_name":"Self Portrait ",
+         "description":"Around August 1962 Andy Warhol began experimenting with silk-screening, a technique he used to reproduce existing photographs repeatedly, as if on an assembly line. This is one of his many self-portraits.",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":16.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":23,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_119.jpg",
+         "name":"muhammad_ali",
+         "friendly_name":"Muhammad Ali ",
+         "description":"Warhol photographed the boxer, Muhammad Ali, in 1977 as part of his 'Athletes' series. ... In the screenprint reproduced here, prior to printing the image Warhol worked into the surface with paint to create the impression of movement. Ali's fixed stare mimics the concentration required during a fight.",
+         "artist":1,
+         "category":5,
+         "original_medium":"Lithograph",
+         "country":1,
+         "price":17.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":24,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_133.jpg",
+         "name":"muhammad_ali",
+         "friendly_name":"Muhammad Ali ",
+         "description":"Warhol photographed the boxer, Muhammad Ali, in 1977 as part of his 'Athletes' series. ... In the screenprint reproduced here, prior to printing the image Warhol worked into the surface with paint to create the impression of movement. Ali's fixed stare mimics the concentration required during a fight.",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":18.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":25,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_146.jpg",
+         "name":"velvet_underground",
+         "friendly_name":"The Velvet Underground and Nico",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":13.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":26,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Andy_Warhol_156.jpg",
+         "name":"pepsi_please",
+         "friendly_name":"Pepsi Please",
+         "description":"Pop artist Andy Warhol was fascinated by celebrities and preoccupied with loss, mortality, and �disaster. ",
+         "artist":1,
+         "category":5,
+         "original_medium":"Silkscreen",
+         "country":1,
+         "price":14.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":27,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Caravaggio_17.jpg",
+         "name":"fruit",
+         "friendly_name":"Basket of Fruit",
+         "description":"Description",
+         "artist":2,
+         "category":2,
+         "original_medium":"Oil",
+         "country":5,
+         "price":14.95,
+         "size":"60 x 50 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":28,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Caravaggio_23.jpg",
+         "name":"bacchus",
+         "friendly_name":"Young Sick Bacchus",
+         "description":"Description",
+         "artist":2,
+         "category":2,
+         "original_medium":"Oil",
+         "country":5,
+         "price":15.95,
+         "size":"60 x 50 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":29,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Caravaggio_25.jpg",
+         "name":"medusa",
+         "friendly_name":"Medusa",
+         "description":"Description",
+         "artist":2,
+         "category":2,
+         "original_medium":"Oil",
+         "country":5,
+         "price":13.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":30,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Caravaggio_54.jpg",
+         "name":"boy",
+         "friendly_name":"Boy with a Basket of Fruit",
+         "description":"Description",
+         "artist":2,
+         "category":2,
+         "original_medium":"Oil",
+         "country":5,
+         "price":14.95,
+         "size":"60 x 50 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":31,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Gustav_Klimt_35.jpg",
+         "name":"fulfillment",
+         "friendly_name":"Fulfillment",
+         "description":"The compositional addition to the depiction of Expectation is Fulfillment, also called �Lovers�, on the opposite side: a man in a red kimono standing with his legs apart, whose back is facing towards us, and a woman in a green dress covered with flowers in an intimate embrace. ",
+         "artist":3,
+         "category":1,
+         "original_medium":"Chalk, pencil, gouache, bronze, silver, gold, platinum, transparent paper, draft paper",
+         "country":2,
+         "price":19.99,
+         "size":"40 x 70 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":32,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Gustav_Klimt_36.jpg",
+         "name":"stocklet_frieze_1",
+         "friendly_name":"Stoclet Frieze 1",
+         "description":"Klimt wrote Fl�ge in 1914 after his first inspection of the finished mosaic in�Brusselsthat he was �most intensely� reminded of the troubles, pleasures, and worries during the creation of the work drawings in the Villa Oleander in Kammerl at Lake Atter.  ",
+         "artist":3,
+         "category":1,
+         "original_medium":"Chalk, pencil, gouache, bronze, silver, gold, platinum, transparent paper, draft paper",
+         "country":2,
+         "price":19.99,
+         "size":"40 x 70 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":33,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Gustav_Klimt_84.jpg",
+         "name":"stocklet_frieze_2",
+         "friendly_name":"Stoclet Frieze 2",
+         "description":"Klimt wrote Fl�ge in 1914 after his first inspection of the finished mosaic in�Brusselsthat he was �most intensely� reminded of the troubles, pleasures, and worries during the creation of the work drawings in the Villa Oleander in Kammerl at Lake Atter.  ",
+         "artist":3,
+         "category":1,
+         "original_medium":"Chalk, pencil, gouache, bronze, silver, gold, platinum, transparent paper, draft paper",
+         "country":2,
+         "price":19.99,
+         "size":"40 x 70 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":34,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Gustav_Klimt_106.jpg",
+         "name":"stocklet_frieze_3",
+         "friendly_name":"Stoclet Frieze 3",
+         "description":"Klimt wrote Fl�ge in 1914 after his first inspection of the finished mosaic in�Brusselsthat he was �most intensely� reminded of the troubles, pleasures, and worries during the creation of the work drawings in the Villa Oleander in Kammerl at Lake Atter.  ",
+         "artist":3,
+         "category":1,
+         "original_medium":"Chalk, pencil, gouache, bronze, silver, gold, platinum, transparent paper, draft paper",
+         "country":2,
+         "price":19.99,
+         "size":"40 x 70 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":35,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Leonardo_da_Vinci_23.jpg",
+         "name":"vitruvian_man",
+         "friendly_name":"The Vitruvian Man",
+         "description":"The Vitruvian Man (Italian: L'uomo vitruviano [?lw??mo vitru?vja?no]; originally known as Le proporzioni del corpo umano secondo Vitruvio, lit. 'The proportions of the human body according to Vitruvius') is a drawing made by the Italian polymath Leonardo da Vinci in about 1490.[1] It is accompanied by notes based on the work of the Roman architect Vitruvius. The drawing, which is in ink on paper, depicts a man in two superimposed positions with his arms and legs apart and inscribed in a circle and square.",
+         "artist":4,
+         "category":4,
+         "original_medium":"Pen, Ink and Metalpoint",
+         "country":5,
+         "price":13.95,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":36,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Leonardo_da_Vinci_24.jpg",
+         "name":"last_supper",
+         "friendly_name":"Sketches for the Last Supper",
+         "description":"The Last Supper (Italian: Il Cenacolo [il t?e?na?kolo] or L'Ultima Cena [?lultima ?t?e?na]) is a late 15th-century mural painting by Italian artist Leonardo da Vinci housed by the refectory of the Convent of Santa Maria delle Grazie in Milan, Italy. It is one of the Western world's most recognizable paintings.",
+         "artist":4,
+         "category":4,
+         "original_medium":"Chalk ",
+         "country":5,
+         "price":13.95,
+         "size":"60 x 40 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":37,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Leonardo_da_Vinci_25.jpg",
+         "name":"madonna_litta",
+         "friendly_name":"Madonna Litta",
+         "description":"The Madonna Litta is a late 15th-century painting, traditionally attributed to Leonardo da Vinci, in the Hermitage Museum, Saint Petersburg. It depicts the Virgin Mary breastfeeding the Christ child, a devotional subject known as the Madonna lactans. The figures are set in a dark interior with two arched openings, as in Leonardo's earlier Madonna of the Carnation, and a mountainous landscape in aerial perspective can be seen beyond. In his left hand Christ holds a goldfinch, which is symbolic of his future Passion.",
+         "artist":4,
+         "category":4,
+         "original_medium":"Oil",
+         "country":5,
+         "price":19.99,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":38,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Leonardo_da_Vinci_26.jpg",
+         "name":"mona_lisa",
+         "friendly_name":"The Mona Lisa",
+         "description":"The Mona Lisa or La Gioconda is a half-length portrait painting by Italian artist Leonardo da Vinci. Considered an archetypal masterpiece of the Italian Renaissance, it has been described as \"the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world\". The painting's novel qualities include the subject's enigmatic expression, the monumentality of the composition, the subtle modelling of forms, and the atmospheric illusionism.",
+         "artist":4,
+         "category":4,
+         "original_medium":"Oil",
+         "country":5,
+         "price":19.99,
+         "size":"40 x 60 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":39,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Paul_Cezanne_4.jpg",
+         "name":"the_smoker",
+         "friendly_name":"The Smoker",
+         "description":"Description",
+         "artist":5,
+         "category":6,
+         "original_medium":"Oil",
+         "country":4,
+         "price":14.95,
+         "size":"40 x 60 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":40,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Paul_Cezanne_22.jpg",
+         "name":"skulls",
+         "friendly_name":"Pyramid of Skulls",
+         "description":"The dramatic resignation to death informs several still life paintings C�zanne made in his final period between 1898 and 1905 which take the skulls as their subject. Today the skulls themselves remain in C�zanne's studio in a suburb of Aix-en-Provence.",
+         "artist":5,
+         "category":6,
+         "original_medium":"Oil",
+         "country":4,
+         "price":15.95,
+         "size":"60 x 40 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":41,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Paul_Cezanne_31.jpg",
+         "name":"quarry",
+         "friendly_name":"The Quarry",
+         "description":"The Quarry illustrates C�zanne's increasing trend towards terse compression of forms and dynamic tension between geometric figures.",
+         "artist":5,
+         "category":6,
+         "original_medium":"Oil",
+         "country":4,
+         "price":13.95,
+         "size":"60 x 40 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":42,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Paul_Cezanne_32.jpg",
+         "name":"apples",
+         "friendly_name":"Still Life with Apples",
+         "description":"Description",
+         "artist":5,
+         "category":6,
+         "original_medium":"Oil",
+         "country":4,
+         "price":14.95,
+         "size":"60 x 40 cm",
+         "featured":true
+      }
+   },
+   {
+      "pk":43,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vasiliy_Kandinskiy_28.jpg",
+         "name":"sky_blue",
+         "friendly_name":"Sky Blue",
+         "description":"Description",
+         "artist":6,
+         "category":3,
+         "original_medium":"Oil",
+         "country":6,
+         "price":15.95,
+         "size":"40 x 70 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":44,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vasiliy_Kandinskiy_43.jpg",
+         "name":"composition_iv",
+         "friendly_name":"Composition IV",
+         "description":"Description",
+         "artist":6,
+         "category":3,
+         "original_medium":"Oil",
+         "country":6,
+         "price":15.95,
+         "size":"60 x 40 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":45,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vasiliy_Kandinskiy_62.jpg",
+         "name":"upward",
+         "friendly_name":"Upward",
+         "description":"Description",
+         "artist":6,
+         "category":3,
+         "original_medium":"Oil",
+         "country":6,
+         "price":13.95,
+         "size":"40 x 70 cm",
+         "featured":false
+      }
+   },
+   {
+      "pk":46,
+      "model":"artworks.artwork",
+      "fields":{
+         "image":"Vasiliy_Kandinskiy_86.jpg",
+         "name":"blue_segment",
+         "friendly_name":"Blue Segment",
+         "description":"Description",
+         "artist":6,
+         "category":3,
+         "original_medium":"Oil",
+         "country":6,
+         "price":14.95,
+         "size":"60 x 55 cm",
+         "featured":false
+      }
+   }
+]
