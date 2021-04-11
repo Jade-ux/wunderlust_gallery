@@ -2,7 +2,7 @@ from django.shortcuts import (
     render, get_object_or_404, redirect, reverse)
 from django.contrib import messages
 from django.db.models import Q
-from .models import Artwork
+from .models import Artwork, Category, Artist, Country
 
 
 def all_artworks(request):
@@ -10,8 +10,26 @@ def all_artworks(request):
 
     artworks = Artwork.objects.all()
     query = None
+    categories = None
+    artists = None
+    countries = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            artworks = artworks.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+        if 'artist' in request.GET:
+            artists = request.GET['artist'].split(',')
+            artworks = artworks.filter(artist__name__in=artists)
+            artists = Artist.objects.filter(name__in=artists)
+
+        if 'country' in request.GET:
+            countries = request.GET['country'].split(',')
+            artworks = artworks.filter(country__name__in=countries)
+            countries = Country.objects.filter(name__in=countries)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
