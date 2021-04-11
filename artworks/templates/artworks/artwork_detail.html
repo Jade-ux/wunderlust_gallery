@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h4>{{ artwork.friendly_name }}</h4>
+        </div>
+    </div>
+    <div class="row mb-20">
+        <div class="col-md-7 col-12">
+            <a href="{{ artwork.image.url }}" target="_blank">
+            <img class="img-fluid" src="{{ artwork.image.url }}" alt="{{ artwork.friendly_name }}">
+            </a>
+        </div>
+        <div class="col-md-5 col-12">
+            <h4 class="mb-0">By: {{ artwork.artist.friendly_name }}</h4>
+            <a href="">View the artist's biography</a>
+            <h4>About the artwork:</h4>
+            <p class="small text-muted mb-0"><i class="fas fa-paint-brush mr-1"></i>{{ artwork.description }}
+            </p>
+            <p class="small text-muted mb-0"><i class="fas fa-paint-brush mr-1"></i>{{ artwork.original_medium }}
+            </p>
+            <p class="mt-1 mb-0">
+                <a class="small text-muted" href="{% url 'artworks' %}?country={{ artwork.country.name }}">
+                    <i class="fas fa-globe-africa mr-1"></i>{{ artwork.country.name }}
+                </a>
+            </p>
+            <p class="mt-1 mb-0">
+                <a class="small text-muted" href="{% url 'artworks' %}?category={{ artwork.category.name }}">
+                    <i class="fas fa-tag mr-1"></i>{{ artwork.category.friendly_name }}
+                </a>
+            </p>
+            <p class="lead mb-0 text-left font-weight-bold">${{ artwork.price }}</p>
+            <button type="button" class="btn btn-purchase">Purchase</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

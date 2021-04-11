@@ -1,14 +1,14 @@
 <div class="collapse navbar-collapse navbar-dark col-12 order-1" id="main-nav">
     <ul class="navbar-nav">
         <li class="nav-item dropdown">
-            <a class="nav-link mr-5" href="#" id="all-art-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link mr-5" href="" id="all-art-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Art
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-art-link">
-                <a href="" class="dropdown-item">By category</a>
-                <a href="" class="dropdown-item ">By artist</a>
-                <a href="" class="dropdown-item ">By price</a>
-                <a href="" class="dropdown-item">By latest added</a>
+                <a href="{% url 'artworks' %}" class="dropdown-item">All art</a>
+                <a href="{% url 'artworks' %}?sort=price&direction=asc" class="dropdown-item ">By price</a>
+                <a href="{% url 'artworks' %}?sort=category&direction=asc" class="dropdown-item">By category</a>
+                <a href="{% url 'artworks' %}?sort=artist&direction=asc" class="dropdown-item ">By artist</a>
             </div>
         </li>
 
@@ -17,10 +17,13 @@
                 Artists
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="artist-link">
-                <a href="" class="dropdown-item">Giotto di Bondone</a>
-                <a href="" class="dropdown-item">Sandro Botticelli</a>
-                <a href="" class="dropdown-item">Caravaggio</a>
-                <a href="" class="dropdown-item">Leonardo da Vinci</a>
+                <a href="{% url 'artworks' %}?artist=andy_warhol" class="dropdown-item">Andy Warhol</a>
+                <a href="{% url 'artworks' %}?artist=caravaggio" class="dropdown-item">Caravaggio</a>
+                <a href="{% url 'artworks' %}?artist=gustav_klimt" class="dropdown-item">Gustav Klimt</a>
+                <a href="{% url 'artworks' %}?artist=leonardo_da_vinci" class="dropdown-item">Leonardo da Vinci</a>
+                <a href="{% url 'artworks' %}?artist=paul_cezanne" class="dropdown-item">Paul Cezanne</a>
+                <a href="{% url 'artworks' %}?artist=wassily_kandinsky" class="dropdown-item">Wassily Kandinsky</a>
+                <a href="{% url 'artworks' %}?artist=vincent_van_gogh" class="dropdown-item">Vincent van Gogh</a>
             </div>
         </li>
 
@@ -29,9 +32,12 @@
                 Countries
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="country-link">
-                <a href="" class="dropdown-item">Austria</a>
-                <a href="" class="dropdown-item">Italy</a>
-                <a href="" class="dropdown-item">France</a>
+                <a href="{% url 'artworks' %}?country=America" class="dropdown-item">America</a>
+                <a href="{% url 'artworks' %}?country=Austria" class="dropdown-item">Austria</a>
+                <a href="{% url 'artworks' %}?country=Netherlands" class="dropdown-item">Netherlands</a>
+                <a href="{% url 'artworks' %}?country=France" class="dropdown-item">France</a>
+                <a href="{% url 'artworks' %}?country=Italy" class="dropdown-item">Italy</a>
+                <a href="{% url 'artworks' %}?country=Russia" class="dropdown-item">Russia</a>
             </div>
         </li>
 
@@ -40,10 +46,12 @@
                 Categories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="categories-link">
-                <a href="" class="dropdown-item">Expressionism</a>
-                <a href="" class="dropdown-item">Cubism</a>
-                <a href="" class="dropdown-item">Impressionism</a>
-                <a href="" class="dropdown-item">Post-impressionism</a>
+                <a href="{% url 'artworks' %}?category=art_nouveau" class="dropdown-item">Art Nouveau</a>
+                <a href="{% url 'artworks' %}?category=baroque" class="dropdown-item">Baroque</a>
+                <a href="{% url 'artworks' %}?category=expressionism" class="dropdown-item">Expressionism</a>
+                <a href="{% url 'artworks' %}?category=high_renaissance" class="dropdown-item">High Renaissance</a>
+                <a href="{% url 'artworks' %}?category=pop_art" class="dropdown-item">Pop Art</a>
+                <a href="{% url 'artworks' %}?category=post_impressionism" class="dropdown-item">Post-Impressionism</a>
             </div>
         </li>
     </ul>
