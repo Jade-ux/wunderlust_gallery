@@ -3,48 +3,42 @@
       "pk":1,
       "model":"artworks.country",
       "fields":{
-         "name":"america",
-         "friendly_name":"America"
+         "name":"America"
       }
    },
    {
       "pk":2,
       "model":"artworks.country",
       "fields":{
-         "name":"austria",
-         "friendly_name":"Austria"
+         "name":"Austria"
       }
    },
    {
       "pk":3,
       "model":"artworks.country",
       "fields":{
-         "name":"netherlands",
-         "friendly_name":"Netherlands"
+         "name":"Netherlands"
       }
    },
    {
       "pk":4,
       "model":"artworks.country",
       "fields":{
-         "name":"france",
-         "friendly_name":"France"
+         "name":"France"
       }
    },
    {
       "pk":5,
       "model":"artworks.country",
       "fields":{
-         "name":"italy",
-         "friendly_name":"Italy"
+         "name":"Italy"
       }
    },
    {
       "pk":6,
       "model":"artworks.country",
       "fields":{
-         "name":"russia",
-         "friendly_name":"Russia"
+         "name":"Russia"
       }
    }
 ]
