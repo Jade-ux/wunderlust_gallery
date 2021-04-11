@@ -29,7 +29,7 @@ body {
     /*height: calc(100vh - 138px)*/
 }
 
-.footer {
+footer {
     background-color: #333333;
     padding-top: 40px;
     height: 50px;
@@ -182,7 +182,7 @@ h2 {
     margin-left: 40px;
 }
 
-/*-------------------------------------------------Media queries*/
+/*-------------------------------------------------Featured banner*/
 
 .featured-collection-banner {
     position: absolute;
@@ -222,3 +222,33 @@ h2 {
     body {
         height: calc(100vh - 116px);
     }
+}
+
+/*-------------------------------------------------Artwork cards*/
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow-y: hidden;
+}
+
+.btn-purchase {
+    background-color: #B90039;
+    color: white;
+    margin-top: 15px;
+}
+
+/*-------------------------------------------------Up arrow*/
+
+.btn-up{
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.link-up {
+    cursor: pointer;
+}
