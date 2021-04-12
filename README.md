@@ -119,6 +119,11 @@ You should also mention in this section any interesting bugs or problems you dis
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
+### Pep 8 testing
+
+- Fixed - in the Artworks view Pep8 picked up an error on the Lower() function from Django, with the error mesage: 'undefined name 'Lower''. Looking this up in the [Django documentation](https://docs.djangoproject.com/en/3.1/ref/models/database-functions/) I could see I needed to import Lower.
+- Bug - in the Artworks view Pep8 picks up an error on all the models, giving an error message that 'Class Country/Category/Artist has no objects member'. Research on [Stack Overflow](https://stackoverflow.com/questions/45135263/class-has-no-objects-member) and [Reddit](https://www.reddit.com/r/django/comments/6nq0bq/class_question_has_no_objects_member/) confirms that this is not really an error as Django adds that property dynamically to all Models but the IDE is not able to see this.
+
 ## Deployment
 
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
