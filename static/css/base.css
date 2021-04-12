@@ -286,6 +286,14 @@ h2 {
     background-color: #B90039;
     color: white;
     margin-top: 15px;
+    border-radius: 0;
+}
+
+.btn-outline {
+    border: solid 1px #B90039;
+    color: #B90039;
+    margin-top: 15px;
+    border-radius: 0;
 }
 
 /*-------------------------------------------------Up arrow*/
