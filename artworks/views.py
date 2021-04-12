@@ -24,6 +24,7 @@ def all_artworks(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 artworks = artworks.annotate(lower_name=Lower('name'))
+                artists = artists.annotate(lower_name=Lower('name'))
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -63,6 +64,9 @@ def all_artworks(request):
         'artworks': artworks,
         'search_term': query,
         'current_sorting': current_sorting,
+        'current_categories': categories,
+        'current_artists': artists,
+        'current_countries': countries,
     }
 
     return render(request, 'artworks/artworks.html', context)
