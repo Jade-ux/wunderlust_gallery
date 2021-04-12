@@ -76,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.contexts.cart_contents',
             ],
         },
     },
@@ -156,3 +157,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STANDARD_DELIVERY_PERCENTAGE: 10
+FREE_DELIVERY_THRESHOLD: 50
+FRAME_WHITE_PERCENTAGE: 65
+FRAME_BLACK_PERCENTAGE: 60
+FRAME_PERCENTAGE: 65
