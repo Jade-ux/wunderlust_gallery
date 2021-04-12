@@ -139,19 +139,11 @@
 {% block postloadjs %}
 {{ block.super }}
 <!--From Boutique Ado project-->
-<script type="text/javascript">
-$('a[href*="#top"]').on('click', function (e) {
-  e.preventDefault()
-
-  $('html, body').animate(
-    {
-      scrollTop: $($(this).attr('href')).offset().top,
-    },
-    500,
-    'linear'
-  )
-})
-</script>
+    <script type="text/javascript">
+        $('.link-up').click(function(e){
+            window.scrollTo(0,0)
+        })
+    </script>
 <!--From Boutique Ado project-->
 <script type="text/javascript">
     $('#sort-selector').change(function () {
