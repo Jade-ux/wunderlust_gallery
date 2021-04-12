@@ -46,7 +46,8 @@
             <div class="sort-select-wrapper w-50">
                 <select id="sort-selector"
                     class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort current selection by...
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort current
+                        selection by...
                     </option>
                     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low
                         to high)</option>
@@ -54,7 +55,8 @@
                         (high to low)</option>
                     <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
                         (A-Z)</option>
-                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                        Category
                         (Z-A)</option>
                     <option value="artist_asc" {% if current_sorting == 'artist_asc' %}selected{% endif %}>Artist
                         (A-Z)</option>
@@ -94,6 +96,9 @@
                                 <i class="fas fa-tag mr-1"></i>{{ artwork.category.friendly_name }}
                             </a>
                         </p>
+                        <p class="mt-1 mb-0 wine">
+                                <i class="far fa-heart"></i> Save to wishlist
+                        </p>
                         <p class="lead mb-0 text-left font-weight-bold">${{ artwork.price }}</p>
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">
@@ -129,6 +134,7 @@
         </div>
     </div>
 </div>
+<!--Up arrow-->
 <div class="btn-up border border-grey">
     <a class="link-up d-flex h-100">
         <i class="fas fa-arrow-up mx-auto my-auto"></i>
@@ -139,11 +145,11 @@
 {% block postloadjs %}
 {{ block.super }}
 <!--From Boutique Ado project-->
-    <script type="text/javascript">
-        $('.link-up').click(function(e){
-            window.scrollTo(0,0)
-        })
-    </script>
+<script type="text/javascript">
+    $('.link-up').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 <!--From Boutique Ado project-->
 <script type="text/javascript">
     $('#sort-selector').change(function () {

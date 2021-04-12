@@ -47,6 +47,10 @@ This is the end of my README currently.
 <span id="ux"></span>
 
 ## UX
+
+*Shopping cart terminology*
+
+When choosing between the words 'bag', 'basket' and 'cart' I thought about the mental model the shoppers would build when shopping for art. It is likely you would imagine putting large artworks into a cart rather than a basket or a bag. I looked up use cases for the terminology and also found that the word 'cart' is easier to localize as it translates well into other languages. One good resource is the article: [Shopping cart, bag or basket](https://uxdesign.cc/shopping-cart-bag-or-basket-fd7360c9413a). Therefore I have gone with 'cart'. I have used an 'Open Cart' icon as I think the flair fits in well with this website's products. Once the user begins adding items to their cart a total will appear which will make the purpose of the icon obvious.
  
 [See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
 

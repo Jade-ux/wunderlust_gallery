@@ -11,7 +11,7 @@
   border: 0;
 }
 
-/*Stops website scrolling left and right on mobile:*/
+/*Stops website scrolling left and right on mobile but breaks the back to top button:*/
 /* html,
 body {
     overflow-x: hidden; 
@@ -38,6 +38,11 @@ footer {
     padding-top: 40px;
     height: 50px;
     color: white;
+}
+
+.wine {
+    color: #B90039;
+    font-size: 1rem;
 }
 
 /*-------------------------------------------------Nav bar*/
@@ -144,6 +149,13 @@ h2 {
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
     color: white;
+}
+
+.h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    color: #333333;
 }
 
 .heading-inline {
