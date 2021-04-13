@@ -309,3 +309,19 @@ h2 {
 .link-up {
     cursor: pointer;
 }
+
+/*-------------------------------------------------Cart*/
+
+.shopping-cart-image {
+    max-width: 100%;
+    margin-bottom: 20;
+}
+
+.cart-art-row {
+    margin-bottom: 30px;
+}
+
+.text-total {
+    border-bottom: solid #80808094 1px;
+    font-weight: 600;
+}

@@ -11,74 +11,96 @@
 {% endblock %}
 
 {% block content %}
-<div class="container header-container">
+<div class="container">
     <div class="row">
-        <div class="col-7">
+        <div class="col-12">
             <h3>Your Shopping Cart</h3>
         </div>
-        <div class="row">
-            <div class="col">
-                {% if bag_items %}
-                <div class="row">
-                    <div class="col-7">
-                        <h4>Items in your cart</h4>
-                    </div>
-                    <div class="col-5"><button>Secure checkout</button></div>
-                    <div class="row">
-                        <div class="col-12">
-                            {% include "cart/cart-total.html" %}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            {% include "bag/checkout-buttons.html" %}
-                            <p class="mb5 mt5">Cart summary below</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% for item in cart_items %}
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if cart_items %}
             <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="col-12 col-lg-6">
-                        {% include "cart/artwork-image.html" %}
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        {% include "cart/artwork-info.html" %}
+                <div class="col-7">
+                    <h4>Items in your cart</h4>
+                </div>
+                <div class="col-5"><button>Secure checkout</button></div>
+                <div class="row">
+                    <div class="col-12">
+                        <!--This is where cart total should go-->
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="row">
-                        <div class="col-6 col-lg-6">
-                            {% include "cart/quantity-form.html" %}
-                        </div>
-                        <div class="col-6 col-lg-6">
-                            Subtotal: ${{ item.artwork.price | calc_subtotal:item.quantity }}
+                <div class="col-12">
+                    <!--checkout buttons-->
+                    <p class="mb5 mt5">Cart summary below</p>
+                </div>
+            </div>
+        </div>
+        {% for item in cart_items %}
+        <div class="row cart-art-row">
+            <div class="col-12 col-lg-6">
+                <div class="row mr-0 ml-0">
+                    <div class="col-12 mb-4 col-md-6 col-lg-4">
+                        <img class="shopping-cart-image" src="{{ item.artwork.image.url }}"
+                            alt="{{ artwork.friendly_name }}">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-8">
+                        <p>{{ item.artwork.friendly_name }}</p>
+                        <p>By: {{ item.artwork.artist.friendly_name }}</p>
+                        <p>Size: {{ item.artwork.size}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row mr-0 ml-0">
+                    <div class="col-6 col-lg-6">
+                        <!--quantity form-->
+                        <div class="form-group w-100">
+                            <div class="input-group">
+                                <input class="form-control rounded-0 qty_input" type="number" name="quantity" value="1" min="1"
+                                    max="99" data-item_id="{{ artwork.id }}" id="id_qty_{{ artwork.id }}">
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-6 col-lg-6">
-                            {% include "cart/frame-form.html" %}
+                    <div class="col-6 col-lg-6">
+                        <p class="text-right">Sub-total: ${{ item.artwork.price }}</p>
+                    </div>
+                                    </div>
+                    <div class="row mr-0 ml-0">
+                        <div class="col-6 col-lg-6 mb-2">
+                     <!--framing options-->
+                        <select class="form-control rounded-0 w-100" name="product_frame" id="id_artwork_frame">
+                            <option value="frame_none" selected>No frame</option>
+                            <option value="frame_white">White frame</option>
+                            <option value="frame_off_white">Antique white frame</option>
+                            <option value="frame_black">Black frame</option>
+                        </select>
                         </div>
                         <div class="col-6 col-lg-6">
-                            Frame price: ${{ item.artwork.price | calc_subtotal:frame }
+                             <p class="text-right">Frame: ${{ item.artwork.price }}</p>
+                        </div>
+                    </div>
+                    <div class="row mr-0 ml-0 mt-5">
+                    <div class="col-12 col-lg-6"></div>
+                    <div class="col-12 col-lg-6 text-total">
+                        <p class="text-right">
+                        Item total: ${{ item.artwork.price }}
+                        </p>
+                    </div>
+                    </div>
+                </div>    
             </div>
-            </div>
-            <div class="row"><div class="col"><hr></div></div>
-
         </div>
-                        </div>
-                               {% endfor %}   
-                                               {% else %}
-                    <p class="lead mb-5">Your cart is empty.</p>
-                    <a href="{% url 'artworks' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
-                {% endif %}  
-            </div>
+        {% endfor %}
+        {% else %}
+        <p class="lead mb-5">Your cart is empty.</p>
+        <a href="{% url 'artworks' %}" class="btn btn-outline-black rounded-0 btn-lg">
+            <span class="icon">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span class="text-uppercase">Keep Shopping</span>
+        </a>
+        {% endif %}
     </div>
 </div>
 
@@ -93,11 +115,10 @@
 
 {% block postloadjs %}
 {{ block.super }}
-                            <!--From Boutique Ado project-->
-                            <script type="text/javascript">
-                                $('.link-up').click(function (e) {
-                                    window.scrollTo(0, 0)
-                                })
-                            </script>
-
-                            {% endblock %}
+<!--From Boutique Ado project-->
+<script type="text/javascript">
+    $('.link-up').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+{% endblock %}
