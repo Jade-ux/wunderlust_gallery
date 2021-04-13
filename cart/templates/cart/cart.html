@@ -20,6 +20,10 @@
     <div class="row">
         <div class="col">
             {% if cart_items %}
+            {{ cart_items }}
+            <br>
+            <br>
+            {{ request.session.cart }}
             <div class="row">
                 <div class="col-7">
                     <h4>Items in your cart</h4>
