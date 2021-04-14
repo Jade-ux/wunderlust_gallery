@@ -11,20 +11,16 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container container-100vh">
     <div class="row">
         <div class="col-12">
             <h3>Your Shopping Cart</h3>
         </div>
     </div>
+    {% if cart_items %}
     <div class="row">
         <div class="col">
-            {% if cart_items %}
-            {{ cart_items }}
-            <br>
-            <br>
-            {{ request.session.cart }}
-            <div class="row">
+            <div class="row mb-4">
                 <div class="col-7">
                     <h4>Items in your cart</h4>
                 </div>
@@ -36,65 +32,87 @@
                 </div>
                 <div class="col-12">
                     <!--checkout buttons-->
-                    <p class="mb5 mt5">Cart summary below</p>
                 </div>
             </div>
         </div>
-        {% for item in cart_items %}
-        <div class="row cart-art-row">
-            <div class="col-12 col-lg-6">
-                <div class="row mr-0 ml-0">
-                    <div class="col-12 mb-4 col-md-6 col-lg-4">
-                        <img class="shopping-cart-image" src="{{ item.artwork.image.url }}"
-                            alt="{{ artwork.friendly_name }}">
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-8">
-                        <p>{{ item.artwork.friendly_name }}</p>
-                        <p>By: {{ item.artwork.artist.friendly_name }}</p>
-                        <p>Size: {{ item.artwork.size}}</p>
-                    </div>
+    </div>
+    {% for item in cart_items %}
+    <div class="row cart-art-row">
+        <div class="col-12 col-lg-6">
+            <div class="row mr-0 ml-0">
+                <div class="col-12 mb-4 col-md-6 col-lg-4">
+                    <img class="shopping-cart-image" src="{{ item.artwork.image.url }}"
+                        alt="{{ artwork.friendly_name }}">
+                </div>
+                <div class="col-12 col-md-6 col-lg-8">
+                    <p>{{ item.artwork.friendly_name }}</p>
+                    <p>By: {{ item.artwork.artist.friendly_name }}</p>
+                    <p>Size: {{ item.artwork.size}}</p>
                 </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <div class="row mr-0 ml-0">
-                    <div class="col-6 col-lg-6">
-                        <!--quantity form-->
-                        <div class="form-group w-100">
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="row mr-0 ml-0">
+                <div class="col-6 col-lg-6">
+                    <!--quantity form-->
+                    <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control rounded-0 qty_input" type="number" name="quantity" value="1" min="1"
-                                    max="99" data-item_id="{{ artwork.id }}" id="id_qty_{{ artwork.id }}">
+                                <div class="input-group-prepend">
+                                    <button class="decrement-qty btn btn-grey rounded-0" data-item_id="{{ item.id }}"
+                                        id="decrement-qty_{{ item.id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-minus"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <input class="form-control qty_input" type="number" name="quantity"
+                                    value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item.id }}"
+                                    id="id_qty_{{ item.item.id }}">
+                                <div class="input-group-append">
+                                    <button class="increment-qty btn btn-grey rounded-0"
+                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                        <span class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6 col-lg-6">
-                        <p class="text-right">Sub-total: ${{ item.artwork.price }}</p>
-                    </div>
-                                    </div>
-                    <div class="row mr-0 ml-0 mt-5">
-                    <div class="col-12 col-lg-6"></div>
-                    <div class="col-12 col-lg-6 text-total">
-                        <p class="text-right">
-                        Item total: ${{ item.artwork.price }}
-                        </p>
-                    </div>
-                    </div>
-                </div>    
+                    </form>
+                    <a class="update-link text-info"><small>Update</small></a>
+                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small><i class="fas fa-times"></i>Remove</small></a>
+                </div>
+                <div class="col-6 col-lg-6">
+                    <p class="text-right">Price each: ${{ item.artwork.price }}</p>
+                </div>
+            </div>
+            <div class="row mr-0 ml-0 mt-5">
+                <div class="col-12 col-lg-6"></div>
+                <div class="col-12 col-lg-6 text-total">
+                    <p class="text-right">
+                        Item subtotal: ${{ item.artwork.price }}
+                    </p>
+                </div>
             </div>
         </div>
-        {% endfor %}
-        {% else %}
-        <p class="lead mb-5">Your cart is empty.</p>
-        <a href="{% url 'artworks' %}" class="btn btn-outline-black rounded-0 btn-lg">
-            <span class="icon">
-                <i class="fas fa-chevron-left"></i>
-            </span>
-            <span class="text-uppercase">Keep Shopping</span>
-        </a>
-        {% endif %}
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="row mt-4">
+        <div class="col-12">
+            <p class="lead mb-5">Your cart is empty.</p>
+            <a href="{% url 'artworks' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
-
-
 <!--Up arrow-->
 <div class="btn-up border border-grey">
     <a class="link-up d-flex h-100">
@@ -105,10 +123,34 @@
 
 {% block postloadjs %}
 {{ block.super }}
+{% include 'artworks/includes/quantity_input_script.html' %}
+
 <!--From Boutique Ado project-->
 <script type="text/javascript">
     $('.link-up').click(function (e) {
         window.scrollTo(0, 0)
+    })
+</script>
+
+<!--From Boutique Ado project-->
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/cart/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
     })
 </script>
 {% endblock %}

@@ -28,13 +28,14 @@
     {% block corejs %}
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/3f3f9142b7.js" crossorigin="anonymous"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <!-- minified jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Popper.js-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
+    <!--Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
@@ -65,7 +66,8 @@
                 <div class="d-none d-lg-flex col-2 mt-2 py-2 py-lg-1 order-2">
                     <form method="GET" action="{% url 'artworks' %}">
                         <div class="input-group w-80">
-                            <input id="search-input" class="form-control border border-grey" type="text" name="q" placeholder="Search">
+                            <input id="search-input" class="form-control border border-grey" type="text" name="q"
+                                placeholder="Search">
                             <div class="input-group-append">
                                 <button class="icon form-control btn btn-search" type="submit">
                                     <span>
@@ -135,20 +137,18 @@
     {% endblock %}
 
     {% block featured %}
-        <div class="container-fluid featured-collection-banner">
-            <div class="row text-center">
-                <div class="col-12">
-                    <h4 class="my-1">Featured collection: Post-impressionists</h4>
-                </div>
+    <div class="container-fluid featured-collection-banner">
+        <div class="row text-center">
+            <div class="col-12">
+                <h4 class="my-1">Featured collection: Post-impressionists</h4>
             </div>
         </div>
+    </div>
     {% endblock %}
 
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
     <footer>
         <div class="col-3">
             <h4>We accept</h4>
@@ -160,6 +160,9 @@
             <h4><i class="fas fa-amex fa-lg"></i></h4>
         </div>
     </footer>
+
+    {% block postloadjs %}
+    {% endblock %}
 </body>
 
 </html>

@@ -142,6 +142,10 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ## Credits
 
+### Code
+
+I included code from the [Code Institute Boutique Ado project](https://github.com/ckz8780/boutique_ado_v1) as a guide for many of the pages and where I have utilised full blocks of code from the project I have attributed it inline.
+
 ### Content
 - The Boutique Ado project provided me with a lot of inspiration for this project. I used many of the lessons from that project to help me when planning out and building my own project and then added to it to make this site unique and fit for it's purpose.
 Text for descriptions of artworks
