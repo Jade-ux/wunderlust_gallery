@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -82,7 +83,8 @@
                         </div>
                     </form>
                     <a class="update-link text-info"><small>Update</small></a>
-                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small><i class="fas fa-times"></i>Remove</small></a>
+                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small><i
+                                class="fas fa-times"></i> Remove</small></a>
                 </div>
                 <div class="col-6 col-lg-6">
                     <p class="text-right">Price each: ${{ item.artwork.price }}</p>
@@ -92,13 +94,66 @@
                 <div class="col-12 col-lg-6"></div>
                 <div class="col-12 col-lg-6 text-total">
                     <p class="text-right">
-                        Item subtotal: ${{ item.artwork.price }}
+                        Item subtotal: ${{ item.artwork.price | calc_subtotal:item.quantity }}
                     </p>
                 </div>
             </div>
         </div>
     </div>
     {% endfor %}
+    <!--Cart totals-->
+    <div class="row mt-4">
+        <div class="col-12 text-right">
+            <h5 class="mb-4">Cart subtotal: ${{ total|floatformat:2 }}</h5>
+            <h5 class="mb-4">${{ delivery|floatformat:2 }}</h5>
+            <h4 class="mb-4"><strong>Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+            {% if free_delivery_delta > 0 %}
+            <p>Get free delivery by adding <strong>${{ free_delivery_delta }}</strong> more to your cart.</p>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-7 col-12 text-right order-sm-last order-md-first">
+            <p>
+                Find out about member discounts
+            </p>
+        </div>
+        <div class="col-md-5 col-12 text-right order-sm-last order-md-first">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control rounded-0 discount_code w-50" type="text" name="discount_code"
+                        value="Enter your discount code" data-item_id="{{ discount_code }}" id="discount">
+                    <div class="input-group-append">
+                        <button class="use-code btn btn-grey rounded-0" data-item_id="use_code_btn" id="use_code_btn">
+                            <span>
+                                Use code
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row mr-0 ml-0 mb-5">
+                <!--Keep shoppng button-->
+                <div class="col-6">
+                    <a href="{% url 'artworks' %}" class="btn btn-outline">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                </div>
+                <!--Keep shoppng button-->
+                <div class="col-6">
+                    <a href="" class="btn btn-purchase text-uppercase rounded-0">
+                        <span>Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     {% else %}
     <div class="row mt-4">
         <div class="col-12">
@@ -135,22 +190,22 @@
 <!--From Boutique Ado project-->
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
+    $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/cart/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var data = { 'csrfmiddlewaretoken': csrfToken };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
