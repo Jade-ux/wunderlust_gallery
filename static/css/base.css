@@ -349,8 +349,35 @@ h2 {
 
 /*-------------------------------------------------Toasts*/
 
+.toast-body-wrapper {
+    height: 160px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .wunderlust-toast {
     overflow: visible;
+}
+
+.close {
+    opacity: .8;
+}
+
+.toast-header-success{
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .25rem .75rem;
+    color: white;
+    background-color: #0A8525;
+    background-clip: padding-box;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    font-size: 1rem;
+}
+
+.toast-artwork-details > p{
+    margin-bottom: 0px;
+    font-size: .8rem;
 }
 
 .toast-capper {
@@ -376,12 +403,9 @@ h2 {
 }
 
 .arrow-success-green {
-    border-bottom-color: #2cc34f !important;
+    border-bottom-color: #0A8525 !important;
 }
 
-.bg-success-green {
-    background-color: #2cc34f;
-}
 
 .arrow-error-orange {
     border-bottom-color: #ff691d !important;

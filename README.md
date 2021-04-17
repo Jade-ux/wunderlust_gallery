@@ -170,6 +170,8 @@ Artist self-portraits:
 - Gustav Klimt's portrait is from Wassily Kandinsky's portrait is from [Wikimedia commons](https://)
 - Leonardo da Vinci's self-portrait is from [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg)
 
+-The image placeholder is from [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Placeholder_view_vector.svg)
+
 ### Acknowledgements
 
 - I received inspiration for this project from X

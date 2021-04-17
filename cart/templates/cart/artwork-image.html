@@ -1,0 +1,4 @@
+{% if item.artwork.image %}
+<img class="img-fluid" src="{{ MEDIA_URL }}placeholder.png" alt="{{ item.artwork.friendly_name }}">
+{% else %}
+<img src="{{ item.artwork.image.url }}" alt="{{ item.artwork.friendly_name }}">

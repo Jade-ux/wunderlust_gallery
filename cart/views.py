@@ -15,16 +15,20 @@ def view_cart(request):
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified artwork to the shopping cart """
 
-    artwork = Artwork.objects.get(pk=item_id)
+    artwork = get_object_or_404(Artwork, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
+        messages.success(
+            request,
+            f'Updated {artwork.friendly_name} quantity {cart[item_id]}')
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Added {artwork.name} to your cart')
+        messages.success(
+            request, f'Added {artwork.friendly_name} to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -33,13 +37,19 @@ def add_to_cart(request, item_id):
 def adjust_cart(request, item_id):
     """ Adjust the quantity of the specified artwork in the shopping cart """
 
+    artwork = get_object_or_404(Artwork, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
     if quantity > 0:
         cart[item_id] = quantity
+        messages.success(
+            request,
+            f'Updated {artwork.friendly_name} quantity {cart[item_id]}')
     else:
         cart.pop(item_id)
+        messages.success(
+            request, f'Removed {artwork.friendly_name} from your cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -54,7 +64,8 @@ def remove_from_cart(request, item_id):
 
         cart.pop(item_id)
         messages.success(
-            request, f'Removed {artwork.name} from your shopping cart')
+            request,
+            f'Removed {artwork.friendly_name} from your shopping cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
