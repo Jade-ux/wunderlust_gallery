@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% 'checkout/css/checkout.css' %}">  
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -22,7 +23,107 @@
         </div>
     </div>
     <div class="row">
-        
+        <!--Checkout form-->
+        <div class="col-12 col-lg-6">
+            <p>
+                Please enter your details below to complete your order
+            </p>
+            <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
+                {% csrf_token %}
+                <fieldset class="mb-3">
+                    <legend class="fieldset-label">Your details:</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend class="fieldset-label">Delivery address:</legend>
+                    {{ order_form.country | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    <div class="form-check form-check-inline float-right mr-0">
+                        {% if user.is_authenticated %}
+                        <label class="form-check-label" for="save-form-info">Save form information to my profile</label>
+                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
+                            checked>
+                        {% else %}
+                        <label class="form-check-label" for="save-form-info">
+                            <a class="" href="{% url 'account_signup' %}">Create an account</a> or
+                            <a class="" href="{% url 'account_login' %}">login</a> to save this information
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset class="mb-3">
+                    <legend class="fieldset-label">Payment details:</legend>
+                    <!--Stripe cart details input-->
+                    <div class="" id="card-element"></div>
+
+                    <!-- Form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                </fieldset>
+                <div class="submit-form">
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline text-uppercase ">
+                        <span class="icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </span>
+                        <span>Make changes</span>
+                    </a>
+                    <button id="submit-btn" class="btn btn-purchase text-uppercase rounded-0">
+                        <span>Confirm & pay</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p class="mt-3 small text-danger">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
+            </form>
+            <hr class="d-lg-none">
+        </div>
+        <!--Order summary-->
+        <div class="col-12 col-lg-6">
+            <div class="row px-3 offset-lg-1">
+                <div class="col-12">
+                    <p>YOUR CART ({{ artwork_count }})</p>
+                </div>
+                {% for item in cart_items %}
+                <div class="row mb-3">
+                    <div class="col-5">
+                        <img class="shopping-cart-image" src="{{ item.artwork.image.url }}"
+                            alt="{{ artwork.friendly_name }}">
+                    </div>
+                    <div class="col-7 toast-artwork-details">
+                        <p>{{ item.artwork.friendly_name }}</p>
+                        <p>By: {{ item.artwork.artist.friendly_name }}</p>
+                        <p>Size: {{ item.artwork.size}}</p>
+                        <p>Qty: {{ item.quantity }}</p>
+                        <h6 class="mt-1">
+                            Item subtotal: ${{ item.artwork.price | calc_subtotal:item.quantity }}
+                        </h6>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row mt-4">
+                    <div class="col-12 text-right">
+                        <h5 class="mb-4">Cart subtotal: ${{ total|floatformat:2 }}</h5>
+                        <h5 class="mb-4">Delivery: ${{ delivery|floatformat:2 }}</h5>
+                        <h4 class="mb-4"><strong>Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                        {% if free_delivery_delta > 0 %}
+                        <p>Get free delivery by adding <strong>${{ free_delivery_delta }}</strong> more to your cart.
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <!--Up arrow-->

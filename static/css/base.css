@@ -443,4 +443,8 @@ h2 {
     border-bottom-color:#ffc107 !important;
 }
 
+/*-------------------------------------------------Forms*/
 
+.form-control {
+    border-radius: 0;
+}
