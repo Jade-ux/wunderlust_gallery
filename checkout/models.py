@@ -7,6 +7,7 @@ from django.conf import settings
 from artworks.models import Artwork
 
 
+# from the Boutique Ado project
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
@@ -58,6 +59,7 @@ class Order(models.Model):
         return self.order_number
 
 
+# from the Boutique Ado project
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
         Order,
