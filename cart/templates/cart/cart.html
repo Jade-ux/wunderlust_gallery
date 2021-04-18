@@ -105,7 +105,7 @@
     <div class="row mt-4">
         <div class="col-12 text-right">
             <h5 class="mb-4">Cart subtotal: ${{ total|floatformat:2 }}</h5>
-            <h5 class="mb-4">${{ delivery|floatformat:2 }}</h5>
+            <h5 class="mb-4">Delivery: ${{ delivery|floatformat:2 }}</h5>
             <h4 class="mb-4"><strong>Total: ${{ grand_total|floatformat:2 }}</strong></h4>
             {% if free_delivery_delta > 0 %}
             <p>Get free delivery by adding <strong>${{ free_delivery_delta }}</strong> more to your cart.</p>
@@ -136,13 +136,13 @@
                 <!--Keep shopping button-->
                 <div class="col-6">
                     <a href="{% url 'artworks' %}" class="btn btn-outline">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
                 </div>
-                <!--Keep shoppng button-->
+                <!--Secure Checkout button-->
                 <div class="col-6 px-0">
                     <a href="" class="btn btn-purchase text-uppercase rounded-0">
                         <span>Secure Checkout</span>
@@ -158,15 +158,18 @@
     <div class="row mt-4">
         <div class="col-12">
             <p class="lead mb-5">Your cart is empty.</p>
-            <a href="{% url 'artworks' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Keep Shopping</span>
-            </a>
-            {% endif %}
+                <div class="col-6">
+                    <a href="{% url 'artworks' %}" class="btn btn-outline">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                </div>
+            
         </div>
     </div>
+    {% endif %}
 </div>
 <!--Up arrow-->
 <div class="btn-up border border-grey">

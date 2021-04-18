@@ -13,36 +13,52 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
+        {% if grand_total %}
         <div class="toast-body-wrapper px-3">
             <p>YOUR CART ({{ artwork_count }})</p>
             {% for item in cart_items %}
-            <div class="row">
-                <div class="col-4">
-                    <img class="shopping-cart-image" src="{{ item.artwork.image.url }}"
-                        alt="{{ artwork.friendly_name }}">
-                </div>
-                <div class="col-8 toast-artwork-details">
-                    <p>{{ item.artwork.friendly_name }}</p>
-                    <p>By: {{ item.artwork.artist.friendly_name }}</p>
-                    <p>Size: {{ item.artwork.size}}</p>
-                    <p>Qty: {{ item.quantity }}</p>
-                </div>
+        <div class="row mb-3">
+            <div class="col-5">
+                <img class="shopping-cart-image" src="{{ item.artwork.image.url }}" alt="{{ artwork.friendly_name }}">
             </div>
-            {% endfor %}
+            <div class="col-7 toast-artwork-details">
+                <p>{{ item.artwork.friendly_name }}</p>
+                <p>By: {{ item.artwork.artist.friendly_name }}</p>
+                <p>Size: {{ item.artwork.size}}</p>
+                <p>Qty: {{ item.quantity }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <hr class="mt-1 mb-3">
         </div>
     </div>
     <div class="row px-3 mb-2">
         <div class="col-12">
-            <hr class="mt-1 mb-3">
-            <p class="text-right">Cart total: ${{ total|floatformat:2 }}</p>
+                <h6 class="text-right">
+                    Total: {% if free_delivery_delta > 0 %}(Excl. delivery)
+                    {% endif %}: ${{ total|floatformat:2 }}
+                </h6>
+            {% if free_delivery_delta > 0 %}
+            <p class="text-right">
+                Delivery: ${{ delivery|floatformat:2 }}
+            </p>
+            <p class="text-right mb-0">
+                Spend ${{ free_delivery_delta }} more to get free delivery.
+            </p>
+            {% endif %}
         </div>
         <div class="col-12">
-            <a href="" class="w-100 btn btn-purchase text-uppercase rounded-0">
-                                <span class="icon">
+            <a href="{% url 'view_cart' %}" class="w-100 btn btn-purchase text-uppercase rounded-0">
+                <span class="icon">
                     <i class="fas fa-lock"></i>
                 </span>
-                <span>Go to secure checkout</span>
+                <span> Go to secure checkout</span>
             </a>
         </div>
     </div>
+    {% endif %}
+</div>
 </div>

@@ -175,6 +175,12 @@ h2 {
     color: #333333;
 }
 
+.h6 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500 !important;
+    font-size: .9rem;
+}
+
 .heading-inline {
     display: inline;
 }
@@ -202,11 +208,21 @@ h2 {
     border-radius: 0;
 }
 
+.btn-purchase:hover {
+    background-color: #f32a61;
+    color: white;
+}
+
 .btn-outline {
-    border: solid 1px #B90039;
+    border: solid 2px #B90039;
     color: #B90039;
     margin-top: 15px;
     border-radius: 0;
+}
+
+.btn-outline:hover {
+    border: solid 2px #f32a61;
+    color: #f32a61;
 }
 
 .btn-grey {
