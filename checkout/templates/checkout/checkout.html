@@ -92,7 +92,7 @@
         <div class="col-12 col-lg-6">
             <div class="row px-3 offset-lg-1">
                 <div class="col-12">
-                    <p>YOUR CART ({{ artwork_count }})</p>
+                    <p>YOUR ORDER ({{ artwork_count }})</p>
                 </div>
                 {% for item in cart_items %}
                 <div class="row mb-3">
@@ -138,32 +138,15 @@
 {{ block.super }}
 {% include 'artworks/includes/quantity_input_script.html' %}
 
-<!--From Boutique Ado project-->
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+
+<!--Up arrow from Boutique Ado project-->
 <script type="text/javascript">
     $('.link-up').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 
-<!--From Boutique Ado project-->
-<script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function (e) {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
-
-    // Remove item and reload on click
-    $('.remove-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/cart/remove/${itemId}`;
-        var data = { 'csrfmiddlewaretoken': csrfToken };
-
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
-    })
-</script>
 {% endblock %}

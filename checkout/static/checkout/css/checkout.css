@@ -1,0 +1,41 @@
+/*From Stripe documentation*/
+
+.StripeElement,
+.stripe-style-input {
+  box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid rgb(186 180 180);
+  border-radius: 0px;
+  background-color: white;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+.InputContainer>input::placeholder {
+    color: #aab7c4;
+}
+
+/*-------------------------------------------------Custom CSS*/
+
+.form-control:focus {
+    border-color: #1e7e34;
+    box-shadow: 0 0 0 0.2rem #1e7e3454;
+}

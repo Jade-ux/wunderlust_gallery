@@ -82,6 +82,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'cart.contexts.cart_contents',
             ],
             'builtins': [
@@ -172,4 +173,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STANDARD_DELIVERY_PERCENTAGE = 10
 FREE_DELIVERY_THRESHOLD = 50
-FRAME_PERCENTAGE = 65
+# FRAME_PERCENTAGE = 65
