@@ -63,8 +63,9 @@
                     <div class="" id="card-element"></div>
 
                     <!-- Form errors -->
-                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <div class="mb-3 mt-2 text-danger" id="payment-card-error" role="alert"></div>
                 </fieldset>
+                <!-- Changes and submit buttons -->
                 <div class="submit-form">
                     <a href="{% url 'view_cart' %}" class="btn btn-outline text-uppercase ">
                         <span class="icon">
@@ -142,7 +143,7 @@
 {{ client_secret|json_script:"id_client_secret" }}
 <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 
-<!--Up arrow from Boutique Ado project-->
+<!--JS for up arrow from Boutique Ado project-->
 <script type="text/javascript">
     $('.link-up').click(function (e) {
         window.scrollTo(0, 0)
