@@ -3,6 +3,7 @@
     https://stripe.com/docs/payments/accept-a-payment
     CSS from here: 
     https://stripe.com/docs/stripe-js
+    Credit also to the Boutique Ado project
 */
 
 var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
@@ -27,7 +28,7 @@ var style = {
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
-// Handle validation errorrs on the card input
+// Handle validation errors on the card input
 card.addEventListener('change', function (event) {
     var errorDiv = document.getElementById('payment-card-error');
     if (event.error) {
@@ -44,12 +45,14 @@ card.addEventListener('change', function (event) {
 });
 
 // Handle submit - from Boutique Ado project
-var form = document.getElementById('payment-form');
+var form = document.getElementById('checkout-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
-    $('#submit-button').attr('disabled', true);
+    $('#submit-btn').attr('disabled', true);
+    $('#checkout-form').fadeToggle(100);
+    $('#processing').fadeToggle(100);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
@@ -63,8 +66,10 @@ form.addEventListener('submit', function(ev) {
                 </span>
                 <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
+            $('#checkout-form').fadeToggle(100);
+            $('#processing').fadeToggle(100);
             card.update({ 'disabled': false});
-            $('#submit-button').attr('disabled', false);
+            $('#submit-btn').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
