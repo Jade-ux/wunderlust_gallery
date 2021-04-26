@@ -45,6 +45,21 @@
     font-weight: bold;
 }
 
+#id_country {
+  padding: 0px 12px;
+}
+
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""],
+.InputElement:invalid {
+    color: #aab7c4 !important;
+}
+
 /*-------------------------------------------------Loader*/
 
 #processing {
