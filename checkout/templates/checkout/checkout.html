@@ -61,9 +61,10 @@
                     <legend class="fieldset-label">Payment details:</legend>
                     <!--Stripe cart details input-->
                     <div class="" id="card-element"></div>
-
                     <!-- Form errors -->
                     <div class="mb-3 mt-2 text-danger" id="payment-card-error" role="alert"></div>
+                    <!-- Client secret - pass to the view to get the payment intent id -->
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                 <!-- Changes and submit buttons -->
                 <div class="submit-form">
