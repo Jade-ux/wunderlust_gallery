@@ -39,3 +39,8 @@
     border-color: #1e7e34;
     box-shadow: 0 0 0 0.2rem #1e7e3454;
 }
+
+
+.order-sub-head {
+    font-weight: bold;
+}
