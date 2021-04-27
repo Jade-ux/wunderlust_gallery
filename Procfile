@@ -1,1 +1,1 @@
-  web: gunicorn boutique_ado.wsgi:application
+  web: gunicorn wunderlust_gallery.wsgi:application
