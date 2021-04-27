@@ -25,18 +25,42 @@
         </div>
     </div>
     <div class="row mb-2">
-<div class="col-12 col-md-6 mb-3">
-    <h5 class="order-sub-head">Your delivery information</h5>
-<form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn btn-profile-primary rounded-0 text-uppercase float-right">Update Information</button>
-                </form>
-</div>
-<div class="col-12 col-md-6 mb-3">
-    <h5 class="order-sub-head">Your order history</h5>
-    {{ orders }}
-</div>
+        <div class="col-12 col-md-6 mb-3">
+            <h5 class="order-sub-head">Your delivery information</h5>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-profile-primary rounded-0 text-uppercase float-right">Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+            <h5 class="order-sub-head">Your order history</h5>
+            {% for order in orders %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">
+                        {{ order.order_number|truncatechars:6 }}
+                    </a>
+                </div>
+                <div class="col-12 col-md-6">
+                    {{ order.date }}
+                </div>
+                <div class="col-12 col-md-6">
+                    <ul class="list-unstyled">
+                        {% for item in order.lineitems.all %}
+                        <li class="small">
+                            {{ item.artwork.name }} x{{ item.quantity }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6">
+                    ${{ order.grand_total }}
+                </div>
+            </div>
+            <hr class="mt-1 mb-3">
+            {% endfor %}
+        </div>
     </div>
 </div>
 

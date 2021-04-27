@@ -23,7 +23,6 @@
             </p>
         </div>
     </div>
-
     <div class="row">
         <div class="col-12 col-lg-7">
             <div class="mb-5 p-2 border">
@@ -189,5 +188,21 @@
             </div>
         </div>
     </div>
+    <div class="row mb-5">
+			<div class="col-12 col-lg-7 text-right">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-profile-primary">
+                        <span class="icon mr-2">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'artworks' %}" class="btn btn-profile-primary">
+                        <span class="text-uppercase">Browse artworks</span>
+                    </a>
+                {% endif %}
+			</div>
+		</div>
 </div>
 {% endblock %}
