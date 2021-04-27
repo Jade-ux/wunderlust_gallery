@@ -1,1 +1,1 @@
-  web: gunicorn wunderlust_gallery.wsgi:application
+  web: gunicorn wunderlust_gallery.wsgi.application
