@@ -115,7 +115,7 @@ def edit_artwork(request, artwork_id):
     if request.method == 'POST':
         form = ArtworkForm(request.POST, request.FILES, instance=artwork)
         if form.is_valid():
-            form.save()
+            artwork = form.save()
             messages.success(request, 'Artwork successfully updated')
             return redirect(reverse('artwork_detail', args=[artwork.id]))
         else:
@@ -129,7 +129,14 @@ def edit_artwork(request, artwork_id):
     context = {
         'form': form,
         'artwork': artwork,
-        'from_edit': True,
+        'on_edit_page': True,
     }
 
     return render(request, template, context)
+
+def delete_artwork(request, artwork_id):
+    """ Delete an artwork """
+    artwork = get_object_or_404(Artwork, pk=artwork_id)
+    artwork.delete()
+    messages.success(request, 'Artwork successfully deleted.')
+    return redirect(reverse('artworks'))

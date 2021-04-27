@@ -97,14 +97,21 @@
                             </a>
                         </p>
                         <p class="mt-1 mb-0 wine">
-                                <i class="far fa-heart"></i> Save to wishlist
+                            <i class="far fa-heart"></i> Save to wishlist
                         </p>
                         <p class="lead mb-0 text-left font-weight-bold">${{ artwork.price }}</p>
+                        {% if request.user.is_superuser %}
+                        <p class="mt-2">
+                            <a class="text-info" href="{% url 'edit_artwork' artwork.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_artwork' artwork.id %}">Delete</a>
+                        </p>
+                        {% endif %}
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">
                         <div class="row">
                             <div class="col">
-                                <a href="{% url 'artwork_detail' artwork.id %}" type="button" class="btn btn-outline">Find out more</a>
+                                <a href="{% url 'artwork_detail' artwork.id %}" type="button"
+                                    class="btn btn-outline">Find out more</a>
                             </div>
                         </div>
                     </div>
