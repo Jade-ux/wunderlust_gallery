@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Artwork, Category, Artist, Country
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 
 from .forms import ArtworkForm
 
@@ -86,8 +87,17 @@ def artwork_detail(request, artwork_id):
     return render(request, 'artworks/artwork_detail.html', context)
 
 
+@login_required
 def add_artwork(request):
-    """ Add an artwork """
+    """ 
+    Check if user is a superuser 
+    Add an artwork 
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'You are trying to access a function \
+            reserved for store owners.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ArtworkForm(request.POST, request.FILES)
         if form.is_valid():
@@ -109,8 +119,17 @@ def add_artwork(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_artwork(request, artwork_id):
-    """ Edit an artwork """
+    """ 
+    Check if user is superuser
+    Edit an artwork 
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'You are trying to access a function \
+            reserved for store owners.')
+        return redirect(reverse('home'))
+
     artwork = get_object_or_404(Artwork, pk=artwork_id)
     if request.method == 'POST':
         form = ArtworkForm(request.POST, request.FILES, instance=artwork)
@@ -134,8 +153,18 @@ def edit_artwork(request, artwork_id):
 
     return render(request, template, context)
 
+
+@login_required
 def delete_artwork(request, artwork_id):
-    """ Delete an artwork """
+    """ 
+    Check if user is superuser
+    Delete an artwork 
+    """
+    if not request.user.is_superuser:
+        messages.error(request, 'You are trying to access a function \
+            reserved for store owners.')
+        return redirect(reverse('home'))
+
     artwork = get_object_or_404(Artwork, pk=artwork_id)
     artwork.delete()
     messages.success(request, 'Artwork successfully deleted.')
