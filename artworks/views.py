@@ -75,7 +75,7 @@ def all_artworks(request):
     return render(request, 'artworks/artworks.html', context)
 
 
-def artwork_detail(request, artwork_id):
+def artwork_detail(request):
     """ A view to show artwork details on a new page """
 
     artwork = get_object_or_404(Artwork, pk=artwork_id)
@@ -85,6 +85,17 @@ def artwork_detail(request, artwork_id):
     }
 
     return render(request, 'artworks/artwork_detail.html', context)
+
+
+def featured_artworks(request):
+    """ A view to show featured artworks """
+    artworks = Artwork.objects.all()
+
+    context = {
+        'artworks': artworks.filter(featured=True)
+    }
+
+    return render(request, 'artworks/artworks_featured.html', context)
 
 
 @login_required

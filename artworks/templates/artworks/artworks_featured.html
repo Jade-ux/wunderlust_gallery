@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div id="top" class="col-12 col-md-6 text-left offset-1">
+            <h4 class="heading-inline">Featured collection
+                {% for c in current_categories %}
+                <h4 class="heading-inline">
+                    <span class="heading-grey"> | {{ c.friendly_name }}</span>
+                </h4>
+                {% endfor %}
+                {% for a in current_artists %}
+                <h4 class="heading-inline">
+                    <span class="heading-grey"> | {{ a.friendly_name }}</span>
+                </h4>
+                {% endfor %}
+                {% for p in current_countries %}
+                <h4 class="heading-inline">
+                    <span class="heading-grey"> | {{ p.name }}</span>
+                </h4>
+                {% endfor %}
+        </div>
+    </div>
+    <div class="row row-header">
+        <div class="col-12 col-md-5 order-md-first offset-1">
+            <p class="breadcrumbs">
+                {% if search_term or current_categories or current_artists or current_countries or current_sorting != 'None_None' %}
+                <span class="small"><a href="{% url 'artworks' %}">Artworks Home</a> | </span>
+                {% endif %}
+                {{ artworks|length }} Artworks{% if search_term %} found for
+                <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
+        </div>
+        <div class="col-12 col-md-5 my-auto order-md-last offset-md-0 offset-1 d-flex justify-content-md-end">
+            <div class="sort-select-wrapper w-50">
+                <select id="sort-selector"
+                    class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort current
+                        selection by...
+                    </option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low
+                        to high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price
+                        (high to low)</option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
+                        (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>
+                        Category
+                        (Z-A)</option>
+                    <option value="artist_asc" {% if current_sorting == 'artist_asc' %}selected{% endif %}>Artist
+                        (A-Z)</option>
+                    <option value="artist_desc" {% if current_sorting == 'artist_desc' %}selected{% endif %}>Artist
+                        (Z-A)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-10 offset-1">
+        <div class="row">
+            {% for artwork in artworks %}
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="card h-100 border-0">
+                    <div class="">
+                        <a href="{% url 'artwork_detail' artwork.id %}">
+                            <img class="card-img-top img-fluid" src="{{ artwork.image.url }}"
+                                alt="{{ artwork.friendly_name }}">
+                        </a>
+                    </div>
+                    <div class="card-body pb-0">
+                        <p class="mb-0">Title: {{ artwork.friendly_name }}</p>
+                        <p class="mb-0">Artist: {{ artwork.artist.friendly_name }}</p>
+                        <p class="small text-muted mb-0"><i
+                                class="fas fa-paint-brush mr-1"></i>{{ artwork.original_medium }}
+                        </p>
+                        <p class="mt-1 mb-0">
+                            <a class="small text-muted" href="{% url 'artworks' %}?country={{ artwork.country.name }}">
+                                <i class="fas fa-globe-africa mr-1"></i>{{ artwork.country.name }}
+                            </a>
+                        </p>
+                        <p class="mt-1 mb-0">
+                            <a class="small text-muted"
+                                href="{% url 'artworks' %}?category={{ artwork.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ artwork.category.friendly_name }}
+                            </a>
+                        </p>
+                        <p class="mt-1 mb-0 wine">
+                            <i class="far fa-heart"></i> Save to wishlist
+                        </p>
+                        <p class="lead mb-0 text-left font-weight-bold">${{ artwork.price }}</p>
+                        {% if request.user.is_superuser %}
+                        <p class="mt-2">
+                            <a class="text-info" href="{% url 'edit_artwork' artwork.id %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_artwork' artwork.id %}">Delete</a>
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+                                <a href="{% url 'artwork_detail' artwork.id %}" type="button"
+                                    class="btn btn-outline">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--Up arrow-->
+<div class="btn-up border border-grey">
+    <a class="link-up d-flex h-100">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!--From Boutique Ado project-->
+<script type="text/javascript">
+    $('.link-up').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+<!--From Boutique Ado project-->
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
+{% endblock %}

@@ -11,15 +11,6 @@
   border: 0;
 }
 
-/*Stops website scrolling left and right on mobile but breaks the back to top button:*/
-/* html,
-body {
-    overflow-x: hidden; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-} */
-
 html { 
     height: 100%; overflow-y:auto; 
 }
@@ -67,6 +58,10 @@ a {
     text-decoration: none;
     background-color: transparent;
     font-weight: 500;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 /*-------------------------------------------------Nav bar*/
@@ -211,7 +206,14 @@ h2 {
 .btn-featured {
     background-color: #B90039;
     color: white;
-    margin-left: 40px;
+}
+
+.btn-white {
+    background-color: white;
+    color: #333333;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    padding: 7px 10px;
 }
 
 .btn-purchase {
@@ -345,7 +347,7 @@ h2 {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 250px;
+        padding-top: 230px;
     }
     
     .featured-collection-banner {
