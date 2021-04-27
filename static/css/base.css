@@ -126,6 +126,12 @@ a {
     color: white;
 }
 
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #ffff;
+    text-decoration: none;
+    background-color: #dc3545;
+}
+
 /*Search bar input field*/
 #search-input {
     border-radius: 0;
@@ -216,7 +222,21 @@ h2 {
     padding: 5px 10px;
 }
 
-.btn-purchase:hover {
+.btn-profile-primary {
+    background-color: #B90039;
+    color: white;
+    margin-top: 15px;
+    border-radius: 0;    
+    padding: 7px 10px;
+}
+
+.btn-profile-primary:focus {
+    border-radius: 0; 
+    outline: none;
+}
+
+.btn-purchase:hover, 
+.btn-profile-primary:hover {
     background-color: #f32a61;
     color: white;
 }
