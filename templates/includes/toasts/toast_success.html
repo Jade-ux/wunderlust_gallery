@@ -13,7 +13,7 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
         <div class="toast-body-wrapper px-3">
             <p>YOUR CART ({{ artwork_count }})</p>
             {% for item in cart_items %}

@@ -2,27 +2,42 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <hr>
-                <h3 class="mb-4">Welcome {{ profile }}</h3>
-                <hr>
-                <h4 class="mb-4">Your profile</h4>
-                <hr>
-            </div>
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-12">
+            <hr>
+            <h3 class="mb-4">Welcome {{ profile }}</h3>
+            <hr>
+            <h4 class="mb-4">Your profile</h4>
+            <hr>
         </div>
+    </div>
+    <div class="row mb-2">
+<div class="col-12 col-md-6 mb-3">
+    <h5 class="order-sub-head">Your delivery information</h5>
+<form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-profile-primary rounded-0 text-uppercase float-right">Update Information</button>
+                </form>
+</div>
+<div class="col-12 col-md-6 mb-3">
+    <h5 class="order-sub-head">Your order history</h5>
+    {{ orders }}
+</div>
+    </div>
+</div>
 
 {% endblock %}
