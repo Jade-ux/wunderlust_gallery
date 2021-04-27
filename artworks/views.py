@@ -88,7 +88,19 @@ def artwork_detail(request, artwork_id):
 
 def add_artwork(request):
     """ Add an artwork """
-    form = ArtworkForm()
+    if request.method == 'POST':
+        form = ArtworkForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Artwork added.')
+            return redirect(reverse('add_artwork'))
+        else:
+            messages.error(
+                request, 'Failed to add artwork. \
+                    Please check the form or any errors.')
+    else:
+        form = ArtworkForm()
+
     template = 'artworks/add_artwork.html'
     context = {
         'form': form,
