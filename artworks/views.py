@@ -5,6 +5,8 @@ from django.db.models import Q
 from .models import Artwork, Category, Artist, Country
 from django.db.models.functions import Lower
 
+from .forms import ArtworkForm
+
 
 def all_artworks(request):
     """ A view to show all artworks, including sorting and search queries """
@@ -82,3 +84,14 @@ def artwork_detail(request, artwork_id):
     }
 
     return render(request, 'artworks/artwork_detail.html', context)
+
+
+def add_artwork(request):
+    """ Add an artwork """
+    form = ArtworkForm()
+    template = 'artworks/add_artwork.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

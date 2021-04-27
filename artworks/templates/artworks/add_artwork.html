@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container container-100vh">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="mb-3">Manage artworks</h3>
+            <h4>Add an artwork</h4>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+ <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'add_artwork' %}" class="form mb-5" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a class="btn btn-outline" href="{% url 'artworks' %}">Cancel</a>
+                        <button class="btn btn-purchase" type="submit">Add artwork</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
