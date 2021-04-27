@@ -62,6 +62,13 @@ footer {
     min-height: 300px;
 }
 
+a {
+    color: #b90039;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 500;
+}
+
 /*-------------------------------------------------Nav bar*/
 
 .fixed-top {
@@ -205,7 +212,8 @@ h2 {
     background-color: #B90039;
     color: white;
     margin-top: 15px;
-    border-radius: 0;
+    border-radius: 0;    
+    padding: 5px 10px;
 }
 
 .btn-purchase:hover {
@@ -213,14 +221,22 @@ h2 {
     color: white;
 }
 
+.margin-bottom-btn {
+    margin-bottom: 1.2rem!important;
+}
+
 .btn-outline {
     border: solid 2px #B90039;
     color: #B90039;
     margin-top: 15px;
     border-radius: 0;
+    background-color: white;
+    padding: 5px 10px;
 }
 
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
     border: solid 2px #f32a61;
     color: #f32a61;
 }
