@@ -35,6 +35,7 @@
         </div>
         <div class="col-12 col-md-6 mb-3">
             <h5 class="order-sub-head">Your order history</h5>
+            {% if orders %}
             {% for order in orders %}
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -49,7 +50,7 @@
                     <ul class="list-unstyled">
                         {% for item in order.lineitems.all %}
                         <li class="small">
-                            {{ item.artwork.name }} x{{ item.quantity }}
+                            {{ item.artwork.friendly_name }} x{{ item.quantity }}
                         </li>
                         {% endfor %}
                     </ul>
@@ -60,6 +61,13 @@
             </div>
             <hr class="mt-1 mb-3">
             {% endfor %}
+            {% else %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <p>You have no previous orders.</p>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

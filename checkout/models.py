@@ -9,7 +9,6 @@ from django_countries.fields import CountryField
 from artworks.models import Artwork
 from profiles.models import UserProfile
 
-
 # from the Boutique Ado project
 class Order(models.Model):
     user_profile = models.ForeignKey(

@@ -25,7 +25,6 @@ def profile(request):
         'form': form,
         'orders': orders,
         'on_profile_page': True,
-        'profile': profile
     }
 
     return render(request, template, context)
