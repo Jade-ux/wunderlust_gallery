@@ -1,6 +1,6 @@
 # Wunderlust Fine Art Gallery
 
-[View live site](https://dashboard.heroku.com/apps/wunderlust)
+[View live site](https://wunderlust.herokuapp.com/)
 
 ## Index
 
