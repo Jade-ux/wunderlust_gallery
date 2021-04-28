@@ -75,7 +75,7 @@ def all_artworks(request):
     return render(request, 'artworks/artworks.html', context)
 
 
-def artwork_detail(request):
+def artwork_detail(request, artwork_id):
     """ A view to show artwork details on a new page """
 
     artwork = get_object_or_404(Artwork, pk=artwork_id)

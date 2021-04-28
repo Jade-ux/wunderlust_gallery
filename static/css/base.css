@@ -297,12 +297,6 @@ h2 {
         height: calc(100vh - 138px);
         position: relative;
     }
-    
-    .block-featured {
-        background-color: rgba(25, 24, 24, 0.81);
-        height: 60%;
-        position: absolute;
-    }
 }
 
 /* Featured collection block for home page*/
@@ -312,6 +306,7 @@ h2 {
     position: absolute;
     padding-left: 90px;
     padding-top: 40px;
+    background-color: rgba(25, 24, 24, 0.81);
 }
 
 /*-------------------------------------------------Featured banner*/
@@ -342,11 +337,16 @@ h2 {
     .header-container {
         padding-top: 280px;
     } 
+
+    .header-container-home {
+        padding-top: 230px;
+    }
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
-    .header-container {
+    .header-container, 
+    .header-container-home {
         padding-top: 230px;
     }
     
