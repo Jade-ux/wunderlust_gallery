@@ -7,6 +7,7 @@
 - <a href="#overview">Project Overview</a>
 - [User stories](static/wireframes_mockups/wunderlust-user-stories.pdf)
 - [Wireframes](static/wireframes_mockups/wunderlust-wireframes.pdf)
+- <a href="#deployment">Deployment</a>
 ...
 ---
 
@@ -33,20 +34,6 @@ I want to allow artists to sign up for accounts so that they can manage their ar
 
 ---
 
-[See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
-
-[See my wireframes here](static/wireframes_mockups/wunderlust-wireframes.pdf)
-
-This is the end of my README currently. 
-
----
-
-
-[See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
-
-
-
-
 <span id="ux"></span>
 
 ## UX
@@ -68,10 +55,8 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## User Stories 
 
+[See my user stories here](static/wireframes_mockups/wunderlust-user-stories.pdf)
 
-|**Nr**|**As a/an**|**I want to be able to**|**So that I can**|
-|:-----|:-----|:-----|:-----|
-|1|Shopper|See what is on exhibition currently.|Decide if I want to attend, read up about the artist(s), find out about artwork.|
 
 <span id="wireframes"></span>
 
@@ -131,17 +116,68 @@ If this section grows too long, you may want to split it off into a separate fil
 - Fixed - in the Artworks view Pep8 picked up an error on the Lower() function from Django, with the error mesage: 'undefined name 'Lower''. Looking this up in the [Django documentation](https://docs.djangoproject.com/en/3.1/ref/models/database-functions/) I could see I needed to import Lower.
 - Bug - in the Artworks view Pep8 picks up an error on all the models, giving an error message that 'Class Country/Category/Artist has no objects member'. Research on [Stack Overflow](https://stackoverflow.com/questions/45135263/class-has-no-objects-member) and [Reddit](https://www.reddit.com/r/django/comments/6nq0bq/class_question_has_no_objects_member/) confirms that this is not really an error as Django adds that property dynamically to all Models but the IDE is not able to see this.
 
+<span id="deployment"></span>
+
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+**Differences between development site and deployed site:**
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+There are no differences between the development site and deployed site. The development site is deployed on the Master branch and I have tested the deployed site to ensure it looks the same and functions in the same way as the development site.
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+**Setting up your Amazon S3 account to host uploads**
 
+<span id="amazonaws"></span>
+
+I used Amazon S3 to host images and fixtures. These are the steps I took and the steps you can take when cloning my site:
+
+1. Create an Amazon AWS account
+2. Create a bucket within your account
+3. Attach a CORS policy
+4. Attach a bucket policy
+5. In IAM create a new user group
+6. Attach an S3 bucket policy to your user group and set the permissions to only allow access to your project bucket
+7. Create a new user and add to the group you created before
+8. Download the access key file and keep it safe, you will not be able to download it again. 
+9. Add the settings to your IDE
+
+**In Heroku**
+
+<span id="heroku"></span>
+
+In Heroku add your config vars (in the 'settings' tab > click 'Reveal config vars')
+
+|**Key**|**Value**|
+|:-----|:-----|
+|SECRET_KEY| `<your secret key>`|
+|DATABASE_URL|`<your postgres database URL found in Heroku>`|
+|STRIPE_PUBLIC_KEY| `<your Stripe public key>`
+|STRIPE_SECRET_KEY|`<your Stripe public key, do not reveal in repo>`|
+|STRIPE_WH_SECRET|`<your Stripe Webhook secret>`|
+|USE_AWS| True |
+|AWS_ACCESS_KEY_ID|`<your Amazon Key ID downloaded from Amazon IAM>`|
+|AWS_SECRET_ACCESS_KEY|`<your Amazon Secret Key downloaded from Amazon IAM>`|
+|EMAIL_HOST_PASS|`<your email account's host password>`|
+|EMAIL_HOST_USER|`<your email address that will be used to send email>`|
+
+
+**If you would like to run my code locally you can clone the site by following these steps:**
+
+1. Visit the main page of my repository on [GitHub here](https://github.com/Jade-ux/wunderlust_gallery).
+2. Click 'Clone or download'
+3. Click the icon to the right of the URL. This will allow you to clone the repository using HTTPS.
+4. If you would like to clone it using SSH, click 'Use SSH'
+5. On your computer open Git Bash
+6. Change the directory to the folder where you would like to run the cloned directory
+7. Type 'Git clone' and then paste the URL you copied from my repository in GitHub
+8. Press enter and your local clone of my site will be created.
+9. Install each of the requirements from the requirements.txt file or run the following code:
+
+                pip -r requirements.txt
+
+12. Set up your Amazon AWS account <a href="#amazonaws">following the steps above</a>.
+10. You will then need to create your own app on Heroku, <a href="#heroku">steps for Heroku</a> above
+
+<div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
 ## Credits
 
@@ -151,7 +187,9 @@ I included code from the [Code Institute Boutique Ado project](https://github.co
 
 ### Content
 - The Boutique Ado project provided me with a lot of inspiration for this project. I used many of the lessons from that project to help me when planning out and building my own project and then added to it to make this site unique and fit for it's purpose.
-Text for descriptions of artworks
+
+**Text for descriptions of artworks:**
+
 - Andy Warhol: [The Tate Modern's website](https://www.tate.org.uk/art/artworks/warhol-muhammad-ali-by-andy-warhol-ar00394#:~:text=Warhol%20photographed%20the%20boxer%2C%20Muhammad,of%20his%20'Athletes'%20series.&text=In%20the%20screenprint%20reproduced%20here,concentration%20required%20during%20a%20fight.) and [Princeton University Art Museum](https://artmuseum.princeton.edu/collections/objects/)
 - Gustav Klimt: [Google Arts](https://artsandculture.google.com/asset/nine-cartoons-for-the-execution-of-a-frieze-for-the-dining-room-of-stoclet-house-in-brussels-part-8-fulfillment-lovers-gustav-klimt/sQFM1ks6C1Lujg?hl=en)
 - Leonardo da Vinci: [Wikipedia - The Vitruvian Man](https://en.wikipedia.org/wiki/Vitruvian_Man) and [Wikipedia - The Last Supper](https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo))
@@ -177,4 +215,4 @@ Artist self-portraits:
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- Thank to you my mentor for guiding me.
