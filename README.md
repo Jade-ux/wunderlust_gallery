@@ -71,24 +71,32 @@ This section is also where you would share links to any wireframes, mockups, dia
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+- Create an account: users can create an account, signing up with their email address
+- Add artwork to cart - users can add artworks they wish to purchase to their cart
+- View cart - users can view their shopping cart and all the items in it before proceeding to checkout.
+- Checkout - users can pay for their items and the site will process their order and take payment via Stripe
+- View profile - users can view their profile and update their shipping details or see their order history
+- Filter artwork - users can filter artwork by Artist, Country, Category or price
+- Search - users can search the site for art that contains their search query in the name or description of the artwork
+- Featured collection - users can view the artwork currently featured on the store
+- Add to wishlist - users can add items they want to save to their wishlist.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
 - Framing options
 
 ## Technologies Used
 
-
+- [Django](https://docs.djangoproject.com/en/3.2/)
+    - This website is built on the Django framework.
 - [JQuery](https://jquery.com)
+    - The project uses **JQuery** to simplify DOM manipulation.[JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Pip3](https://pypi.org/project/pip/) - used to install Python packages
 - [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used to provide all account functionality including the ability to register for an account, verify, log in and out and reset a forgotten password.
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - used to speed up responsive design
+- [Stripe](https://stripe.com/) - is used as the payment system for the store
 
 
 ## Testing

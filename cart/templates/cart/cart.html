@@ -25,15 +25,6 @@
                 <div class="col-7">
                     <h4>Items in your cart</h4>
                 </div>
-                <div class="col-5"><button>Secure checkout</button></div>
-                <div class="row">
-                    <div class="col-12">
-                        <!--This is where cart total should go-->
-                    </div>
-                </div>
-                <div class="col-12">
-                    <!--checkout buttons-->
-                </div>
             </div>
         </div>
     </div>
@@ -110,48 +101,6 @@
             {% if free_delivery_delta > 0 %}
             <p>Get free delivery by adding <strong>${{ free_delivery_delta }}</strong> more to your cart.</p>
             {% endif %}
-        </div>
-    </div>
-    <div class="row mt-4">
-        <div class="col-md-7 col-12 text-right order-sm-last order-md-first">
-            <p>
-                Find out about member discounts
-            </p>
-        </div>
-        <div class="col-md-5 col-12 text-right d-sm">
-            <div class="form-group">
-                <div class="input-group">
-                    <input class="form-control rounded-0 discount_code w-50" type="text" name="discount_code"
-                        value="Enter your discount code" data-item_id="{{ discount_code }}" id="discount">
-                    <div class="input-group-append">
-                        <button class="use-code btn btn-grey rounded-0" data-item_id="use_code_btn" id="use_code_btn">
-                            <span>
-                                Use code
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="row mr-0 ml-0 mb-5">
-                <!--Keep shopping button-->
-                <div class="col-6">
-                    <a href="{% url 'artworks' %}" class="btn btn-outline">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                </div>
-                <!--Secure Checkout button-->
-                <div class="col-6 px-0">
-                    <a href="{% url 'checkout' %}" class="btn btn-purchase text-uppercase rounded-0">
-                        <span>Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
     {% else %}
