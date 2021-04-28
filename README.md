@@ -141,6 +141,9 @@ In this section, you should go over the different parts of your project, and des
 |**As a user I want to:**|||
 |Browse all artwork | I expect to easily be able to navigate to a page that will show all the artwork| I find the 'All artwork' link on the navigation bar which is clear and clicking that reveals a drop-down. From there I can select 'All art' to view all.|
 |Filter artwork by certain criteria | I expect to easily filter artwork by artist, category or country| I find the filters along the top navigation which allow me to easily choose the filter I want. When I click on one of the choices I am taken to a page that shows only the art relevant to the category I chose.|
+|Add items to my cart | I expect to be able to add items that I wish to purchase to my cart. | I find a button on the 'artwork detail' page that allows me to add an item to my cart. |
+|View cart| I expect to be able to view my cart and see all items and a total for my purchase before I checkout.| Navigating to the cart via the cart icon on the nav bar I can see all the items in the cart before I checkout.|
+| Check out | I want to be able to pay for my items and have my order processed. | When I click 'Secure checkout' the order is processed and I receive a confirmation message that my order has been processed. |
 
 
 <span id="database"></span>
