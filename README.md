@@ -89,6 +89,7 @@ In this section, you should go over the different parts of your project, and des
 - Search - users can search the site for art that contains their search query in the name or description of the artwork
 - Featured collection - users can view the artwork currently featured on the store
 - Add to wishlist - users can add items they want to save to their wishlist.
+- Admin - admin users can log into the admin portal to manage artwork, artists, categories, countries, orders and users.
 
 
 ### Features Left to Implement
@@ -131,6 +132,16 @@ In this section, you should go over the different parts of your project, and des
 
 - Fixed - in the Artworks view Pep8 picked up an error on the Lower() function from Django, with the error mesage: 'undefined name 'Lower''. Looking this up in the [Django documentation](https://docs.djangoproject.com/en/3.1/ref/models/database-functions/) I could see I needed to import Lower.
 - Bug - in the Artworks view Pep8 picks up an error on all the models, giving an error message that 'Class Country/Category/Artist has no objects member'. Research on [Stack Overflow](https://stackoverflow.com/questions/45135263/class-has-no-objects-member) and [Reddit](https://www.reddit.com/r/django/comments/6nq0bq/class_question_has_no_objects_member/) confirms that this is not really an error as Django adds that property dynamically to all Models but the IDE is not able to see this.
+
+### Testing user stories
+
+
+|**User story**|**Expected outcome**|**Actual outcome**|
+|:-----|:-----|:-----|
+|**As a user I want to:**|||
+|Browse all artwork | I expect to easily be able to navigate to a page that will show all the artwork| I find the 'All artwork' link on the navigation bar which is clear and clicking that reveals a drop-down. From there I can select 'All art' to view all.|
+|Filter artwork by certain criteria | I expect to easily filter artwork by artist, category or country| I find the filters along the top navigation which allow me to easily choose the filter I want. When I click on one of the choices I am taken to a page that shows only the art relevant to the category I chose.|
+
 
 <span id="database"></span>
 
