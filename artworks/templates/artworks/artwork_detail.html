@@ -14,7 +14,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1 class="display text-center mb-5 mt-2" >{{ artwork.friendly_name }}</h1>
+            <h1 class="display text-center mb-5 mt-2">{{ artwork.friendly_name }}</h1>
         </div>
     </div>
     <div class="row mb-5">
@@ -40,6 +40,10 @@
                     <i class="fas fa-tag mr-1"></i>{{ artwork.category.friendly_name }}
                 </a>
             </p>
+            <form class="form" action="{% url 'add_to_wishlist' artwork.id %}" method="POST">
+                {% csrf_token %}
+            <button class="mt-1 mb-0 wine" type="submit" ><i class="far fa-heart"></i> Save to wishlist</button>
+            </form>
             <p class="lead mb-0 mt-3 text-left font-weight-bold">${{ artwork.price }}</p>
             {% if request.user.is_superuser %}
             <p class="mt-2">

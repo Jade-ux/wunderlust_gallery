@@ -67,4 +67,3 @@ class Artwork(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
-

@@ -1,5 +1,7 @@
 # Wunderlust Fine Art Gallery
 
+[View live site](https://dashboard.heroku.com/apps/wunderlust)
+
 ## Index
 
 - <a href="#overview">Project Overview</a>
@@ -7,6 +9,7 @@
 - [Wireframes](static/wireframes_mockups/wunderlust-wireframes.pdf)
 ...
 ---
+
 
 <span id="overview"></span>
 
