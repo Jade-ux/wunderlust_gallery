@@ -8,9 +8,16 @@
 - [User stories](static/wireframes_mockups/wunderlust-user-stories.pdf)
 - [Wireframes](static/wireframes_mockups/wunderlust-wireframes.pdf)
 - <a href="#database">Database design</a>
+- <a href="#features">Features</a>
+- <a href="#technologies">Technologies used</a>
+- <a href="#testing">Testing</a>
 - <a href="#deployment">Deployment</a>
-...
----
+- <a href="#credits">Credits</a>
+- <a href="#contents">Contents</a>
+- <a href="#media">Media</a>
+- <a href="#acknowledgements">Acknowledgements</a>
+
+<hr>
 
 
 <span id="overview"></span>
@@ -65,6 +72,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 [See my user stories here](static/wireframes_mockups/wunderlust-wireframes.pdf)
 
+<span id="features"></span>
 
 ## Features
 
@@ -86,38 +94,38 @@ In this section, you should go over the different parts of your project, and des
 ### Features Left to Implement
 - Framing options
 
+<span id="technologies"></span>
+
 ## Technologies Used
 
 - [Django](https://docs.djangoproject.com/en/3.2/)
     - This website is built on the Django framework.
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.[JQuery](https://jquery.com)
+- [HTML](https://en.wikipedia.org/wiki/HTML) - the front-end structure of this app is written in HTML
+- [CSS](https://en.wikipedia.org/wiki/CSS) - this app is styled with CSS
+- [JavaScript](https://www.javascript.com/) - used for DOM manipulation
+- [JQuery](https://jquery.com) - used to simplify DOM manipulation
+- [Python](https://www.python.org/) - the app functionality and data manipulation is written in Python.
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Pip3](https://pypi.org/project/pip/) - used to install Python packages
 - [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - used to provide all account functionality including the ability to register for an account, verify, log in and out and reset a forgotten password.
 - [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - used to speed up responsive design
 - [Stripe](https://stripe.com/) - is used as the payment system for the store
+- [Balsamiq](https://balsamiq.com/) - wireframes for this app were created with the Balsamiq wireframing tool.
+- [Amazon S3](https://docs.aws.amazon.com/s3/index.html?nc2=h_ql_doc_s3) - this project uses Amazon S3 to store images uploaded by users 
+- [Heroku](https://dashboard.heroku.com/apps) - is the cloud platform used to host the deployed app.
 
+<span id="testing"></span>
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+## Technologies used for testing:
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+- [W3C Markup Validation Service](https://validator.w3.org/) - used to validate HTML code
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - used to test CSS code validation
+- [JSHint](https://jshint.com/) - used to test for JavaScript code validity
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse_) - used for testing front-end best practice
+- [Pep8 checker](http://pep8online.com/) - used for testing Python code against Pep8 guidelines
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ### Pep 8 testing
 
@@ -195,11 +203,14 @@ In Heroku add your config vars (in the 'settings' tab > click 'Reveal config var
 
 <div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
+<span id="credits"></span>
 ## Credits
 
 ### Code
 
 I included code from the [Code Institute Boutique Ado project](https://github.com/ckz8780/boutique_ado_v1) as a guide for many of the pages and where I have utilised full blocks of code from the project I have attributed it inline.
+
+<span id="contents"></span>
 
 ### Content
 - The Boutique Ado project provided me with a lot of inspiration for this project. I used many of the lessons from that project to help me when planning out and building my own project and then added to it to make this site unique and fit for it's purpose.
@@ -212,6 +223,7 @@ I included code from the [Code Institute Boutique Ado project](https://github.co
 - Paul Cezanne [Wikipedia - Paul Cezanne](https://en.wikipedia.org/wiki/Paul_C%C3%A9zanne) 
 - Wassily Kandinsky [Wassily Kandinsky](https://www.wassilykandinsky.net/work-50.php) 
 
+<span id="media"></span>
 
 ### Media
 
@@ -228,6 +240,9 @@ Artist self-portraits:
 - Leonardo da Vinci's self-portrait is from [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Leonardo_self.jpg)
 
 -The image placeholder is from [Wikimedia commons](https://commons.wikimedia.org/wiki/File:Placeholder_view_vector.svg)
+
+
+<span id="media"></span>
 
 ### Acknowledgements
 
