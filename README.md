@@ -162,6 +162,42 @@ I took time to plan out my database in Excel. I created all database tables in c
 
 There are no differences between the development site and deployed site. The development site is deployed on the Master branch and I have tested the deployed site to ensure it looks the same and functions in the same way as the development site.
 
+**If you would like to run my code locally you can clone the site by following these steps:**
+
+1. Visit the main page of my repository on [GitHub here](https://github.com/Jade-ux/wunderlust_gallery).
+2. Click 'Clone or download'
+3. Click the icon to the right of the URL. This will allow you to clone the repository using HTTPS.
+4. If you would like to clone it using SSH, click 'Use SSH'
+5. On your computer open Git Bash
+6. Change the directory to the folder where you would like to run the cloned directory
+7. Type 'Git clone' and then paste the URL you copied from my repository in GitHub
+8. Press enter and your local clone of my site will be created.
+9. Install each of the requirements from the requirements.txt file or run the following code:
+
+                pip -r requirements.txt
+
+12. Run the initial migrations with:
+                
+                python3 manage.py migrate
+
+13. Load the data from the JSON files in this order and with this code:
+                
+                python3 manage.py loaddata categories
+                python3 manage.py loaddata countries
+                python3 manage.py loaddata artists
+                python3 manage.py loaddata artworks
+
+14. To create a superuser you can use in development type the command:
+
+                python3 manage.py createsuperuser
+    
+    Follow the prompts to set up your superuser.
+15. To view the live preview of the site in development, use the command:
+                python3 manage.py runserver
+
+16. Set up your Amazon AWS account <a href="#amazonaws">following the steps above</a>.
+17. You will then need to create your own app on Heroku, <a href="#heroku">steps for Heroku</a> below.
+
 **Setting up your Amazon S3 account to host uploads**
 
 <span id="amazonaws"></span>
@@ -182,7 +218,7 @@ I used Amazon S3 to host images and fixtures. These are the steps I took and the
 
 <span id="heroku"></span>
 
-In Heroku add your config vars (in the 'settings' tab > click 'Reveal config vars')
+1. In Heroku create a new app and add your config vars (in the 'settings' tab > click 'Reveal config vars')
 
 |**Key**|**Value**|
 |:-----|:-----|
@@ -197,23 +233,7 @@ In Heroku add your config vars (in the 'settings' tab > click 'Reveal config var
 |EMAIL_HOST_PASS|`<your email account's host password>`|
 |EMAIL_HOST_USER|`<your email address that will be used to send email>`|
 
-
-**If you would like to run my code locally you can clone the site by following these steps:**
-
-1. Visit the main page of my repository on [GitHub here](https://github.com/Jade-ux/wunderlust_gallery).
-2. Click 'Clone or download'
-3. Click the icon to the right of the URL. This will allow you to clone the repository using HTTPS.
-4. If you would like to clone it using SSH, click 'Use SSH'
-5. On your computer open Git Bash
-6. Change the directory to the folder where you would like to run the cloned directory
-7. Type 'Git clone' and then paste the URL you copied from my repository in GitHub
-8. Press enter and your local clone of my site will be created.
-9. Install each of the requirements from the requirements.txt file or run the following code:
-
-                pip -r requirements.txt
-
-12. Set up your Amazon AWS account <a href="#amazonaws">following the steps above</a>.
-10. You will then need to create your own app on Heroku, <a href="#heroku">steps for Heroku</a> above
+2. Connect your app to your Github repository and then enable automatic deploys.
 
 <div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
