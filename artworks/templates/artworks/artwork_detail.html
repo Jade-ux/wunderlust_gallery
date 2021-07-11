@@ -40,10 +40,16 @@
                     <i class="fas fa-tag mr-1"></i>{{ artwork.category.friendly_name }}
                 </a>
             </p>
-            <form class="form" action="{% url 'add_to_wishlist' artwork.id %}" method="POST">
-                {% csrf_token %}
-            <button class="mt-1 mb-0 wine" type="submit" ><i class="far fa-heart"></i> Save to wishlist</button>
-            </form>
+ <!--Add to/remove from wishlist-->
+ {% if session.user %}
+ {% if on_wishlist %}
+ <a href="{% url 'add_to_wishlist' artwork.id %}" class="mt-1 mb-0 wine" data-tooltip="Add to wishlist"><i
+         class="far fa-heart"></i> Add to wishlist</a>
+ {% else %}
+ <a href="{% url 'remove_from_wishlist' artwork.id %}" class="mt-1 mb-0 wine" data-tooltip="Remove from wishlist"><i
+         class="far fa-heart"></i> Remove from wishlist</a>
+ {% endif %}
+ {% endif %}
             <p class="lead mb-0 mt-3 text-left font-weight-bold">${{ artwork.price }}</p>
             {% if request.user.is_superuser %}
             <p class="mt-2">
