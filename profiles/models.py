@@ -44,18 +44,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
     instance.userprofile.save()
 
 
-    """
-    Signal to add to wishlist
-    """
-
-    
-class Wishlist(models.Model):
-    user_profile = models.ForeignKey(
-        UserProfile, on_delete=models.SET_NULL,
-        null=True, blank=True)
-    wishlist_artwork = models.ForeignKey(
-        Artwork, null=False, blank=False, on_delete=models.CASCADE)
-    wishlist_path = models.CharField(max_length=30,null=True,blank=True)
-
-    def __str__(self):
-        return self.wishlist_artwork.friendly_name

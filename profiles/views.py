@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
-from .models import Wishlist
+
 from artworks.models import Artwork
 from .forms import UserProfileForm
 from checkout.models import Order
@@ -55,21 +55,3 @@ def order_history(request, order_number):
     return render(request, template, context)
 
 
-@login_required
-def add_to_wishlist(request, item_id):
-    """Add an item to wishlist"""
-    save_info = request.session.get('save_info')
-    artwork = get_object_or_404(Artwork, pk=item_id)
-    wishlist = get_object_or_404(Wishlist, wishlist_path=wishlist_path)
-
-    if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
-        # Save artwork to user's profile
-        wishlist.user_profile = profile
-        wishlist.save()
-
-    wishlist_artwork = Wishlist.objects.get_or_create(
-        wishlist_artwork=artwork, user=profile)
-
-    messages.info(request, 'Artwork successfully added to your wishlist.')
-    return redirect(reverse('artworks'))
