@@ -176,7 +176,7 @@ def delete_artwork(request, artwork_id):
             reserved for store owners.')
         return redirect(reverse('home'))
 
-    request, artwork_id
+    artwork = get_object_or_404(Artwork, pk=artwork_id)
     artwork.delete()
     messages.success(request, 'Artwork successfully deleted.')
     return redirect(reverse('artworks'))
