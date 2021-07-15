@@ -12,11 +12,13 @@
 }
 
 html { 
-    height: 100%; overflow-y:auto; 
+    height: 100%; 
+    overflow-y:auto; 
+    overflow-x: hidden; 
+    width: 100%;
 }
 
 body {
-    /*height: 100%;*/
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
     font-size: 1rem;
