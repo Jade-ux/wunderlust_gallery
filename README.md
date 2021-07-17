@@ -80,15 +80,14 @@ In this section, you should go over the different parts of your project, and des
  
 ### Existing Features
 
-- Create an account: users can create an account, signing up with their email address
-- Add artwork to cart - users can add artworks they wish to purchase to their cart
+- Create an account: users can create an account, signing up with their email address.
+- Add artwork to cart - users can add artworks they wish to purchase to their cart.
 - View cart - users can view their shopping cart and all the items in it before proceeding to checkout.
-- Checkout - users can pay for their items and the site will process their order and take payment via Stripe
-- View profile - users can view their profile and update their shipping details or see their order history
-- Filter artwork - users can filter artwork by Artist, Country, Category or price
-- Search - users can search the site for art that contains their search query in the name or description of the artwork
-- Featured collection - users can view the artwork currently featured on the store
-- Add to wishlist - users can add items they want to save to their wishlist.
+- Checkout - users can pay for their items and the site will process their order and take payment via Stripe.
+- View profile - users can view their profile and update their shipping details or see their order history.
+- Filter artwork - users can filter artwork by Artist, Country, Category or Price.
+- Search - users can search the site for art that contains their search query in the name or description of the artwork.
+- Featured collection - users can view the artwork currently featured in the store.
 - Admin - admin users can log into the admin portal to manage artwork, artists, categories, countries, orders and users.
 
 
@@ -100,7 +99,7 @@ In this section, you should go over the different parts of your project, and des
 ## Technologies Used
 
 - [Django](https://docs.djangoproject.com/en/3.2/)
-    - This website is built on the Django framework.
+    - This website is built on the Django framework, and is currently running version 3.1.7.
 - [HTML](https://en.wikipedia.org/wiki/HTML) - the front-end structure of this app is written in HTML
 - [CSS](https://en.wikipedia.org/wiki/CSS) - this app is styled with CSS
 - [JavaScript](https://www.javascript.com/) - used for DOM manipulation
@@ -237,7 +236,15 @@ I used Amazon S3 to host images and fixtures. These are the steps I took and the
 
 <div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
+<span id="bugs"></span>
+
+## Bug fixes
+
+- 404 page: I followed the [Django documentation](https://docs.djangoproject.com/en/3.2/ref/exceptions/) for guidance on setting up the 404 page. The site now has a '404 - Page not found' error page which is displayed when a user tries to navigate to a page that does not exist on the website.
+- 500 error page: I followed the [Django documentation](https://docs.djangoproject.com/en/3.2/ref/exceptions/) for help on setting up the 500 error handling. The site now displays a 500 error page if there is a server error.
+
 <span id="credits"></span>
+
 ## Credits
 
 ### Code
