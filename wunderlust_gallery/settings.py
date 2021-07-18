@@ -32,7 +32,6 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['wunderlust.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [

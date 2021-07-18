@@ -1,1 +1,31 @@
-<p>This is an error 500</p>
+{% extends "base.html" %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container container-100vh">
+    <div class="row ml-1 mt-5 mt-md-2">
+        <div class="col-12">
+            <h3>Apologies, we're not able to process that request.</h3>
+        </div>
+    </div>
+    <div class="row ml-1 mt-5 mt-md-2">
+        <div class="col">
+            <a href="{% url 'home' %}" type="button"
+                class="btn btn-outline">Take me home</a>
+                <a href="{% url 'artworks' %}" type="button"
+                class="btn btn-outline ml-4">View all art</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
