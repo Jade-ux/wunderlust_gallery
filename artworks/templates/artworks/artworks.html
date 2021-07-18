@@ -14,7 +14,11 @@
 <div class="container-fluid">
     <div class="row">
         <div id="top" class="col-12 col-md-6 text-left offset-1">
-            <h4 class="heading-inline">All Art
+            {% if 'artworks_featured' in request.path_info %}
+            <h4 class="heading-inline">Featured collection</h4>
+            {% else %}
+            <h4 class="heading-inline">All Art</h4>
+            {% endif %}
                 {% for c in current_categories %}
                 <h4 class="heading-inline">
                     <span class="heading-grey"> | {{ c.friendly_name }}</span>

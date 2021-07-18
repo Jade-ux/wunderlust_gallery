@@ -11,8 +11,8 @@ from .forms import ArtworkForm
 
 def all_artworks(request):
     """ A view to show all artworks, including sorting and search queries """
+    artworks = Artwork.objects.filter(featured=True) if 'artworks_featured' in request.path_info else Artwork.objects.all()
 
-    artworks = Artwork.objects.all()
     query = None
     categories = None
     artists = None
@@ -85,18 +85,6 @@ def artwork_detail(request, artwork_id):
     }
 
     return render(request, 'artworks/artwork_detail.html', context)
-
-
-def featured_artworks(request):
-    """ A view to show featured artworks """
-    artworks = Artwork.objects.all()
-
-    context = {
-        'artworks': artworks.filter(featured=True)
-    }
-
-    return render(request, 'artworks/artworks_featured.html', context)
-
 
 @login_required
 def add_artwork(request):

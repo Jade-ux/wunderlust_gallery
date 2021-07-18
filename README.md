@@ -83,7 +83,7 @@ In this section, you should go over the different parts of your project, and des
 - Create an account: users can create an account, signing up with their email address.
 - Add artwork to cart - users can add artworks they wish to purchase to their cart.
 - View cart - users can view their shopping cart and all the items in it before proceeding to checkout.
-- Checkout - users can pay for their items and the site will process their order and take payment via Stripe.
+- Checkout - users can pay for their items and the site will process their order and take payment via Stripe. 
 - View profile - users can view their profile and update their shipping details or see their order history.
 - Filter artwork - users can filter artwork by Artist, Country, Category or Price.
 - Search - users can search the site for art that contains their search query in the name or description of the artwork.
@@ -242,6 +242,8 @@ I used Amazon S3 to host images and fixtures. These are the steps I took and the
 
 - 404 page: I followed the [Django documentation](https://docs.djangoproject.com/en/3.2/ref/exceptions/) for guidance on setting up the 404 page. The site now has a '404 - Page not found' error page which is displayed when a user tries to navigate to a page that does not exist on the website.
 - 500 error page: I followed the [Django documentation](https://docs.djangoproject.com/en/3.2/ref/exceptions/) for help on setting up the 500 error handling. The site now displays a 500 error page if there is a server error.
+- On the payment card details form, the default requested a ZIP code which only allowed numbers. I have removed that so that people from outside the US can checkout as well. 
+- The featured artworks page sorting was not working as expected, when a user would try to sort by category, artist or price the artworks would not be sorted. This has now been fixed by removing the view for featured artworks and instead adding a check into the 'all_artworks' view to check whether 'featured_artworks' is in the requested url path and if it is, display only featured artworks. This means that the featured artworks page now has all the same functionality as the all artworks page without repeated code.
 
 <span id="credits"></span>
 
