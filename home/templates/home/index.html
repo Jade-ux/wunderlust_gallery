@@ -12,22 +12,18 @@
 
 {% block content %}
 
-<div class="container-fluid container-banner">
-    <div class="row">
-        <div class="block-featured col-md-5 col-12 my-auto">
-            <h2 class="display-5">
-                Featured collection
+<div class="container-fluid container-banner d-flex justify-content-center">
+    <div class="d-flex flex-row">
+        <div class="block-featured">
+            <h2>
+                Featured collection:
             </h2>
-            <h2 class="display-5">
+            <h3>
                 Post Impressionists
-            </h2>
-            <div class="my-5">
-                <h4>
-                    <a href="{% url 'artworks_featured' %}" class="btn-featured btn btn-lg rounded-0 text-uppercase">
-                        View collection
-                    </a>
-                </h4>
-            </div>
+            </h3>
+            <a href="{% url 'artworks_featured' %}" class="btn-featured btn btn-lg rounded-0 text-uppercase my-2">
+                View collection
+            </a>
         </div>
     </div>
 </div>
