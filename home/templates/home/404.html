@@ -1,1 +1,33 @@
-<p>This is an error 404</p>
+{% extends "base.html" %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container container-100vh">
+    <div class="row ml-1 mt-5 mt-md-2">
+        <div class="col-12">
+            <h3>Sorry, we couldn't find the page you were looking for.</h3>
+        </div>
+    </div>
+    <div class="row ml-1 mt-5 mt-md-2">
+        <div class="col">
+            <a href="{% url 'home' %}" type="button"
+                class="btn btn-outline">Take me home</a>
+        </div>
+        <div class="col">
+            <a href="{% url 'artworks' %}" type="button"
+                class="btn btn-outline">View all art</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
