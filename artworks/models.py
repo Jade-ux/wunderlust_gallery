@@ -59,7 +59,6 @@ class Artwork(models.Model):
     image = models.ImageField()
     original_medium = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    size = models.CharField(max_length=254)
     featured = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
