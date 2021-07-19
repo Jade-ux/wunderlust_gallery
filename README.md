@@ -152,21 +152,28 @@ I took time to plan out my database in Excel. I created all database tables in c
 | Check out | I want to be able to pay for my items and have my order processed. | When I click 'Secure checkout' the order is processed and I receive a confirmation message that my order has been processed. |
 | Order history | I want to be able to previous order history quickly and easily. | I click on 'Account' and then 'My Profile' and I can see my previous orders displayed on the page, each with a link I can click to view the full order details. |
 
-### Testing CRUD functionality
+### Testing Superadmin CRUD functionality
 
 |**Functionality**|**Expected outcome(s)**|**Actual outcome(s)**|
 |:-----|:-----|:-----|
+|**As a superuser I want to:**|||
 | Add an artwork | Only admins should be able to access the /artworks/add page and be able to add artworks. | I have tested as a user who does not have superadmin rights and tried to edit the url to /artworks/add. I am sent back to the home page and an error message appears informing me that only admins can access that functionality. | 
 | Add an artwork | As a superadmin I should be able to add an artwork with all the required details and see it added to the list of all artwork with the correct details. Once an artwork is added I should also be able to see it in the admin. | After logging in with my superuser login, I access the 'Add artwork' form via the 'Artworks Management' link under 'Account' in the top navigation. The form prompts me to enter the details of the artwork I want to add. I enter all the details and add an image and click 'Add artwork'. Once the request has been processed a toast message appears, informing me that the artwork has been successfully added. I click through to the artworks page and find the artwork I have added, with all the correct details. In the admin, my new artwork is now showing. |
 | Edit an artwork | As a superuser I should be able to edit the details of an artwork that already exists on the site. | When logged in as a superuser I navigate to the artwork I want to edit and find a link at the bottom of the description with the description 'Edit'. When I click on it I am taken to a form that allows me to change the details of the item. I click save and navigate back to the artwork where I can see that the details have been updated with my changes.|
 | Edit an artwork | Only admins should be able to see the 'edit' link and be able to access the /artworks/edit/(artwork id) page. | I have tested as a user who does not have superadmin rights and could not see the 'edit' link, I tried to edit the url to /artworks/edit/(artwork id) to access the edit artwork page. I am sent back to the home page and an error message appears informing me that only admins can access that functionality. | 
+| Delete an artwork | As a superuser I should be able to delete an artwork that already exists on the site. | When logged in as a superuser I navigate to the artwork I want to delete and find a link at the bottom of the description with the description 'Delete'. When I click it I see a message informing me that the artwork has been successfully deleted and when I search for the artwork I can see it no longer exists on the site.|
+| Delete an artwork | Only admins should be able to see the 'delete' link and be able to access the /artworks/delete/(artwork id) page. | I have tested as a user who does not have superadmin rights and could not see the 'delete' link, I tried to edit the url to /artworks/delete/(artwork id) to access the delete artwork functionality and I am sent back to the home page and an error message appears informing me that only admins can access that functionality. | 
 
 
 ### Testing form validation
 
 |**Form**|**Field(s) tested**|**Expected outcome**|**Actual outcome**|
 |:-----|:-----|:-----|:-----|
-|Checkout | ADD THIS | Add.| Add.|
+| Checkout | All required text fields | I should not be able to submit the form with any required fields left blank. | I tried to delete each field in turn and then submit the form. The form was not submitted and a message prompted me to complete the missing fields. |
+| Edit shipping details | All fields | I should be able to delete or edit any of the information in the form. On this form a user is allowed to leave fields blank if they wish as they will have to complete these whenever trying to checkout when purchasing any items. This allows users to not store default shipping details and ensure they enter the correct details for each purchase. | I tried to delete each field in turn and was able to save the form. A message popped up notifying me that my details had been updated. |
+| Edit/Add an artwork | Image field | I should only be able to upload files that are in image format. | I tried to upload a file that is not an image format and the form was not submitted. A toast message informed me the form submission was not successful and to check the form error messages, checking the form, the image field is highlighted and a message under it prompts me to upload a valid image because '... The file you uploaded was either not an image or a corrupted image.'|
+| Edit/Add an artwork | All required text fields | I should not be able to submit the form with any required fields left blank. | I tried to delete each field in turn and then submit the form. The form was not submitted and a message prompted me to complete the missing fields. |
+
 
 <div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
