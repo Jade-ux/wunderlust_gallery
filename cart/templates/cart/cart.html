@@ -15,7 +15,7 @@
 <div class="container container-100vh">
     <div class="row ml-1 mt-5 mt-md-1 mt-lg-1">
         <div class="col-12">
-            <h4>Your Shopping Cart</h4>
+            <h3>Your Shopping Cart</h3>
         </div>
     </div>
     {% if cart_items %}
@@ -104,8 +104,8 @@
     </div>
     {% else %}
     <div class="row mt-4">
-        <div class="col-12">
-            <p class="lead mb-5">Your cart is empty.</p>
+        <div class="col-12 ml-4 mb-5">
+            <p class="lead">Your cart is empty.</p>
             <div class="col-6">
                 <a href="{% url 'artworks' %}" class="btn btn-outline">
                     <span class="icon">

@@ -200,11 +200,15 @@ h3 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
     font-size: 2rem;
-    color: white;
+    color: #333333;
+}
+
+.white {
+    color: white !important;
 }
 
 h4 {
-    color: white;
+    color: #333333;
     font-size: 1.1rem;
 }
 
@@ -420,7 +424,7 @@ h6 {
 /*-------------------------------------------------Toasts*/
 
 .toast-body-wrapper {
-    height: 160px;
+    height: 140px;
     overflow-x: hidden;
     overflow-y: auto;
 }
