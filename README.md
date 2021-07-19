@@ -125,6 +125,7 @@ In this section, you should go over the different parts of your project, and des
 - [JSHint](https://jshint.com/) - used to test for JavaScript code validity
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse_) - used for testing front-end best practice
 - [Pep8 checker](http://pep8online.com/) - used for testing Python code against Pep8 guidelines
+- Chrome Developer Tools
 
 
 ### Pep 8 testing
@@ -143,6 +144,24 @@ In this section, you should go over the different parts of your project, and des
 |Add items to my cart | I expect to be able to add items that I wish to purchase to my cart. | I find a button on the 'artwork detail' page that allows me to add an item to my cart. |
 |View cart| I expect to be able to view my cart and see all items and a total for my purchase before I checkout.| Navigating to the cart via the cart icon on the nav bar I can see all the items in the cart before I checkout.|
 | Check out | I want to be able to pay for my items and have my order processed. | When I click 'Secure checkout' the order is processed and I receive a confirmation message that my order has been processed. |
+
+
+<div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
+
+### Responsive design and cross-browser testing
+
+I tested the site across devices using Chrome developer tools. The site has the following breakpoints:
+
+Mobile Devices: <= 600px Tablet Devices: > 600px Desktop Devices: > 992px Large Desktop Devices: > 1200px
+
+After testing with Chrome developer tools, I incorporated additional css for mobile devices and tablets, making sure the content displays correctly across those devices.
+
+I tested the user journeys on an iPhone and desktop computer and with Chrome developer tools to make sure I could follow the same user journeys on each device.
+
+Browsers: I have tested the site on Firefox and Chrome.
+
+
+<div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
 
 <span id="database"></span>
@@ -244,6 +263,15 @@ I used Amazon S3 to host images and fixtures. These are the steps I took and the
 - 500 error page: I followed the [Django documentation](https://docs.djangoproject.com/en/3.2/ref/exceptions/) for help on setting up the 500 error handling. The site now displays a 500 error page if there is a server error.
 - On the payment card details form, the default requested a ZIP code which only allowed numbers. I have removed that so that people from outside the US can checkout as well. 
 - The featured artworks page sorting was not working as expected, when a user would try to sort by category, artist or price the artworks would not be sorted. This has now been fixed by removing the view for featured artworks and instead adding a check into the 'all_artworks' view to check whether 'featured_artworks' is in the requested url path and if it is, display only featured artworks. This means that the featured artworks page now has all the same functionality as the all artworks page without repeated code.
+- Overflow-x: to fix the issue with overflow-x on desktop I added the following to the html element:
+                width: 100%;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+    To fix the issue on mobile I added the following to the body element:
+                width: 100%;
+                overflow-x: clip;
+    I have tested this using Chrome developer tools to view the site in different mobile devices and the x-overflow is now fixed on mobile.
 
 <span id="credits"></span>
 

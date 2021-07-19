@@ -43,11 +43,21 @@ body {
 
 footer {
     background-color: #333333;
-    padding-top: 40px;
+    padding: 40px 45px;
     color: white;
     position: relative;
     width: 100%;
     bottom: 0;
+}
+
+.footer-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.footer-icon:hover {
+    color: #b90039;
 }
 
 .wine {
@@ -193,6 +203,11 @@ h3 {
     color: white;
 }
 
+h4 {
+    color: white;
+    font-size: 1.1rem;
+}
+
 h6 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 500 !important;
@@ -299,7 +314,7 @@ h6 {
     padding-right: 0px;
     background: url('/media/home-img.jpg') no-repeat top right fixed;
     background-size: cover;
-    height: 450px;
+    height: 100vh;
     position: relative;
 }
 
@@ -312,7 +327,7 @@ h6 {
 
 /* Featured collection block for home page*/
 .block-featured {
-    height: 60%;
+    height: 70%;
     padding: 35px;
     background-color: rgba(25, 24, 24, 0.81);
     margin-top: 20%;
