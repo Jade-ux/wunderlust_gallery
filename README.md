@@ -167,6 +167,9 @@ Only two errors were found on the CSS validation checks:
 |Add items to my cart | I expect to be able to add items that I wish to purchase to my cart. | I find a button on the 'artwork detail' page that allows me to add an item to my cart. |
 |View cart| I expect to be able to view my cart and see all items and a total for my purchase before I checkout.| Navigating to the cart via the cart icon on the nav bar I can see all the items in the cart before I checkout.|
 | Check out | I want to be able to pay for my items and have my order processed. | When I click 'Secure checkout' the order is processed and I receive a confirmation message that my order has been processed. |
+| Register | I want to register as a user on the site. | I click 'Register' and complete the form. If I leave a field blank or if I enter information that is not in the correct format into one of the fields I am alerted to correct it and the form does not submit until I have entered all required information correctly. When I have entered all the information correctly and click 'Sign up' I am informed that an email has been sent to the address I signed up with, which includes a validation link. I receive the email, paste the link into my browser and am taken to a page which asks me to confirm I want to validate my email. Once I have I am notified that validation was successful and I can sign in. |
+|Login | As a user with an account I want to be able to log into the website so that I can easily checkout, manage my shipping details and view my previous orders. | I navigate to the login page, enter my credentials and click 'Sign in'. If I have entered details which do not match any in the site's database I am not logged in and receive an alert informing me that my login attempt was unsuccessful. If I enter the correct details I am logged in, see an alert informing me that I have successfully logged in, and I can now access the user-restricted pages. |
+|Logout | As a user who is logged in to the site I want to be able to log out of the site in case I am using a shared device or just for added security. | I navigate to the logout page and click 'Sign out' and I am alerted that I have been successfully signed out, I can no longer see my personal account. |
 | Order history | I want to be able to previous order history quickly and easily. | I click on 'Account' and then 'My Profile' and I can see my previous orders displayed on the page, each with a link I can click to view the full order details. |
 
 ### Testing Superadmin CRUD functionality
@@ -182,7 +185,7 @@ Only two errors were found on the CSS validation checks:
 | Delete an artwork | Only admins should be able to see the 'delete' link and be able to access the /artworks/delete/(artwork id) page. | I have tested as a user who does not have superadmin rights and could not see the 'delete' link, I tried to edit the url to /artworks/delete/(artwork id) to access the delete artwork functionality and I am sent back to the home page and an error message appears informing me that only admins can access that functionality. | 
 
 
-### Testing form validation
+### Testing other form validation
 
 |**Form**|**Field(s) tested**|**Expected outcome**|**Actual outcome**|
 |:-----|:-----|:-----|:-----|
