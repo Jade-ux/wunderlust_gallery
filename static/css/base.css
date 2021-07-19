@@ -26,7 +26,6 @@ body {
     font-size: 1rem;
     color: #333333;
     width: 100%;
-    overflow-x: clip;
 }
 
 @media (min-width: 992px) {
@@ -414,7 +413,7 @@ h6 {
 
 .shopping-cart-image {
     max-width: 100%;
-    margin-bottom: 20;
+    margin-bottom: 20px;
 }
 
 .cart-art-row {
