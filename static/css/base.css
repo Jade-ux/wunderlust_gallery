@@ -237,6 +237,11 @@ h6 {
     color: white;
 }
 
+.btn-featured:hover {
+    background-color: #f32a61;
+    color: white;
+}
+
 .btn-white {
     background-color: white;
     color: #333333;

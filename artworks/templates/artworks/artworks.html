@@ -15,9 +15,9 @@
     <div class="row">
         <div id="top" class="col-12 col-md-6 text-left offset-1">
             {% if 'artworks_featured' in request.path_info %}
-            <h4 class="heading-inline">Featured collection</h4>
+            <h3 class="heading-inline">Featured collection</h3>
             {% else %}
-            <h4 class="heading-inline">All Art</h4>
+            <h3 class="heading-inline">All Art</h3>
             {% endif %}
                 {% for c in current_categories %}
                 <h4 class="heading-inline">
@@ -73,8 +73,6 @@
 </div>
 <div class="container">
 <div class="row">
-    <div class="col-10 offset-1">
-        <div class="row">
             {% for artwork in artworks %}
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <div class="card h-100 border-0">
@@ -142,8 +140,6 @@
             {% endfor %}
         </div>
     </div>
-</div>
-</div>
 <!--Up arrow-->
 <div class="btn-up border border-grey">
     <a class="link-up d-flex h-100">
