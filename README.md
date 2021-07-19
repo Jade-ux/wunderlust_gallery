@@ -70,13 +70,20 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Wireframes
 
-[See my user stories here](static/wireframes_mockups/wunderlust-wireframes.pdf)
+[See my wireframes here](static/wireframes_mockups/wunderlust-wireframes.pdf)
+
+
+<span id="database"></span>
+
+## Database design
+
+I took time to plan out my database in Excel. I created all database tables in csv files and then converted those to json to allow me to add my fixtures.
+
+[See my database diagram here](static/wireframes_mockups/db_visual.PNG)
 
 <span id="features"></span>
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
 
@@ -135,7 +142,6 @@ In this section, you should go over the different parts of your project, and des
 
 ### Testing user stories
 
-
 |**User story**|**Expected outcome**|**Actual outcome**|
 |:-----|:-----|:-----|
 |**As a user I want to:**|||
@@ -144,7 +150,23 @@ In this section, you should go over the different parts of your project, and des
 |Add items to my cart | I expect to be able to add items that I wish to purchase to my cart. | I find a button on the 'artwork detail' page that allows me to add an item to my cart. |
 |View cart| I expect to be able to view my cart and see all items and a total for my purchase before I checkout.| Navigating to the cart via the cart icon on the nav bar I can see all the items in the cart before I checkout.|
 | Check out | I want to be able to pay for my items and have my order processed. | When I click 'Secure checkout' the order is processed and I receive a confirmation message that my order has been processed. |
+| Order history | I want to be able to previous order history quickly and easily. | I click on 'Account' and then 'My Profile' and I can see my previous orders displayed on the page, each with a link I can click to view the full order details. |
 
+### Testing CRUD functionality
+
+|**Functionality**|**Expected outcome(s)**|**Actual outcome(s)**|
+|:-----|:-----|:-----|
+| Add an artwork | Only admins should be able to access the /artworks/add page and be able to add artworks. | I have tested as a user who does not have superadmin rights and tried to edit the url to /artworks/add. I am sent back to the home page and an error message appears informing me that only admins can access that functionality. | 
+| Add an artwork | As a superadmin I should be able to add an artwork with all the required details and see it added to the list of all artwork with the correct details. Once an artwork is added I should also be able to see it in the admin. | After logging in with my superuser login, I access the 'Add artwork' form via the 'Artworks Management' link under 'Account' in the top navigation. The form prompts me to enter the details of the artwork I want to add. I enter all the details and add an image and click 'Add artwork'. Once the request has been processed a toast message appears, informing me that the artwork has been successfully added. I click through to the artworks page and find the artwork I have added, with all the correct details. In the admin, my new artwork is now showing. |
+| Edit an artwork | As a superuser I should be able to edit the details of an artwork that already exists on the site. | When logged in as a superuser I navigate to the artwork I want to edit and find a link at the bottom of the description with the description 'Edit'. When I click on it I am taken to a form that allows me to change the details of the item. I click save and navigate back to the artwork where I can see that the details have been updated with my changes.|
+| Edit an artwork | Only admins should be able to see the 'edit' link and be able to access the /artworks/edit/(artwork id) page. | I have tested as a user who does not have superadmin rights and could not see the 'edit' link, I tried to edit the url to /artworks/edit/(artwork id) to access the edit artwork page. I am sent back to the home page and an error message appears informing me that only admins can access that functionality. | 
+
+
+### Testing form validation
+
+|**Form**|**Field(s) tested**|**Expected outcome**|**Actual outcome**|
+|:-----|:-----|:-----|:-----|
+|Checkout | ADD THIS | Add.| Add.|
 
 <div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
 
@@ -162,15 +184,6 @@ Browsers: I have tested the site on Firefox and Chrome.
 
 
 <div class="right"><a href="#index"><button class="btn-small">Back to index &#8593;</button></a></div>
-
-
-<span id="database"></span>
-
-## Database design
-
-I took time to plan out my database in Excel. I created all database tables in csv files and then converted those to json to allow me to add my fixtures.
-
-[See my database diagram here](static/wireframes_mockups/db_visual.PNG)
 
 <span id="deployment"></span>
 
