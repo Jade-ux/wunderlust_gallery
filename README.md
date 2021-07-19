@@ -140,6 +140,8 @@ I took time to plan out my database in Excel. I created all database tables in c
 - Identified a duplicate ID of 'user-options' - I have changed the id of the nav element in the mobile-nav to a unique id to fix this error.
 - Identified a duplicate ID of 'search-input' - I have changed the id of the nav element in the mobile-nav to a unique id to fix this error.
 - Identified an error with a couple of aria-labelledby attributes not pointing to elements with the same IDs in the document. This highlighted that I had typos in the 'countries-link' and 'categories-link' ids and I have now fixed those so that they match the corresponding aria-labelledby attributes.
+- The validator noted an issue with 'li' elements not being allowed as children of nav elements, however, as this is nav structure is from Bootstrap I have chosen to leave it as it is at this time and will change it in future releases.
+- On the 'all artworks' page the validator picked up an error: 'Bad value button for attribute type on element a: Subtype missing' for the buttons to view more information on each artwork. I have now removed that attribute and tested the page again, the buttons are all working.
 
 ### Pep 8 testing
 
