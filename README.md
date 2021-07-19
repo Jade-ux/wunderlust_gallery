@@ -90,6 +90,7 @@ I took time to plan out my database in Excel. I created all database tables in c
 - Create an account: users can create an account, signing up with their email address.
 - Add artwork to cart - users can add artworks they wish to purchase to their cart.
 - View cart - users can view their shopping cart and all the items in it before proceeding to checkout.
+- Edit cart items - users can edit their cart before checking out to remove items or increase or decrease the quantity of items.
 - Checkout - users can pay for their items and the site will process their order and take payment via Stripe. 
 - View profile - users can view their profile and update their shipping details or see their order history.
 - Filter artwork - users can filter artwork by Artist, Country, Category or Price.
@@ -100,6 +101,7 @@ I took time to plan out my database in Excel. I created all database tables in c
 
 ### Features Left to Implement
 - Framing options
+- Add to wishlist functionality
 
 <span id="technologies"></span>
 
@@ -132,7 +134,7 @@ I took time to plan out my database in Excel. I created all database tables in c
 - [JSHint](https://jshint.com/) - used to test for JavaScript code validity
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse_) - used for testing front-end best practice
 - [Pep8 checker](http://pep8online.com/) - used for testing Python code against Pep8 guidelines
-- Chrome Developer Tools
+- Chrome Developer Tools - used to test across device types
 
 
 ### Markup validation testing
@@ -149,8 +151,7 @@ I took time to plan out my database in Excel. I created all database tables in c
 Only two errors were found on the CSS validation checks:
 
 - A missing unit after the number '20' for the .shopping-cart-image class's margin attribute. I have noiw fixed that by adding the unit.
-- Overflow-x: clip is showing as not valid and I have therefore removed that.
-
+- Overflow-x: clip was showing as not valid and I have therefore removed that.
 
 ### Pep 8 testing
 
@@ -165,7 +166,7 @@ Only two errors were found on the CSS validation checks:
 |Browse all artwork | I expect to easily be able to navigate to a page that will show all the artwork| I find the 'All artwork' link on the navigation bar which is clear and clicking that reveals a drop-down. From there I can select 'All art' to view all.|
 |Filter artwork by certain criteria | I expect to easily filter artwork by artist, category or country| I find the filters along the top navigation which allow me to easily choose the filter I want. When I click on one of the choices I am taken to a page that shows only the art relevant to the category I chose.|
 |Add items to my cart | I expect to be able to add items that I wish to purchase to my cart. | I find a button on the 'artwork detail' page that allows me to add an item to my cart. |
-|View cart| I expect to be able to view my cart and see all items and a total for my purchase before I checkout.| Navigating to the cart via the cart icon on the nav bar I can see all the items in the cart before I checkout.|
+|View cart| I expect to be able to view my cart and see all items and a total for my purchase before I checkout.| Navigating to the cart via the cart icon on the nav bar I can see all the items in the cart before I checkout and I can make changes to the items if needed.|
 | Check out | I want to be able to pay for my items and have my order processed. | When I click 'Secure checkout' the order is processed and I receive a confirmation message that my order has been processed. |
 | Register | I want to register as a user on the site. | I click 'Register' and complete the form. If I leave a field blank or if I enter information that is not in the correct format into one of the fields I am alerted to correct it and the form does not submit until I have entered all required information correctly. When I have entered all the information correctly and click 'Sign up' I am informed that an email has been sent to the address I signed up with, which includes a validation link. I receive the email, paste the link into my browser and am taken to a page which asks me to confirm I want to validate my email. Once I have I am notified that validation was successful and I can sign in. |
 |Login | As a user with an account I want to be able to log into the website so that I can easily checkout, manage my shipping details and view my previous orders. | I navigate to the login page, enter my credentials and click 'Sign in'. If I have entered details which do not match any in the site's database I am not logged in and receive an alert informing me that my login attempt was unsuccessful. If I enter the correct details I am logged in, see an alert informing me that I have successfully logged in, and I can now access the user-restricted pages. |
