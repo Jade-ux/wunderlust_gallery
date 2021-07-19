@@ -135,6 +135,12 @@ I took time to plan out my database in Excel. I created all database tables in c
 - Chrome Developer Tools
 
 
+### Markup validation testing
+
+- Identified a duplicate ID of 'user-options' - I have changed the id of the nav element in the mobile-nav to a unique id to fix this error.
+- Identified a duplicate ID of 'search-input' - I have changed the id of the nav element in the mobile-nav to a unique id to fix this error.
+- Identified an error with a couple of aria-labelledby attributes not pointing to elements with the same IDs in the document. This highlighted that I had typos in the 'countries-link' and 'categories-link' ids and I have now fixed those so that they match the corresponding aria-labelledby attributes.
+
 ### Pep 8 testing
 
 - Fixed - in the Artworks view Pep8 picked up an error on the Lower() function from Django, with the error mesage: 'undefined name 'Lower''. Looking this up in the [Django documentation](https://docs.djangoproject.com/en/3.1/ref/models/database-functions/) I could see I needed to import Lower.

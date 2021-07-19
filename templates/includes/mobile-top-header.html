@@ -8,7 +8,7 @@
     <div class="dropdown-menu border-0 w-100 p-3 my-0 " aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'artworks' %}">
             <div class="input-group w-100">
-                <input id="search-input" class="form-control border border-grey rounded-0" type="text" name="q" placeholder="Search our site">
+                <input id="search-input1" class="form-control border border-grey rounded-0" type="text" name="q" placeholder="Search our site">
                 <div class="input-group-append">
                     <button class="form-control form-control search-btn-mobile btn btn-search" type="submit">
                         <span class="icon">
@@ -21,13 +21,13 @@
     </div>
 </li>
 <li class="list-inline-item dropdown list-nav">
-    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user-circle fa-lg"></i></div>
             <p class="my-0">My Account</p>
         </div>
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+    <div class="dropdown-menu border-0" aria-labelledby="user-options1">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
                 <a href="{% url 'add_artwork' %}" class="dropdown-item">Artwork Management</a>
